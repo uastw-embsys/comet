@@ -1,0 +1,13 @@
+# Freecad temporary files
+*.pyc
+*.fcstd1
+*.FCStd1
+*.fcstd2
+*.FCStd2
+*.FCBak
+Private
+*.bak
+.DS_Store
+
+# LibreOffice locks
+.~lock.*#

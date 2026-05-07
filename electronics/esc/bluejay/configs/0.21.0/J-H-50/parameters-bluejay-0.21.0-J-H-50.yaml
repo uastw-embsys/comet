@@ -1,0 +1,50 @@
+# SPDX-License-Identifier: CC0-1.0
+# Copyright (c) 2026 Christoph Böhm
+# 
+# This configuration is dedicated to the public domain under CC0-1.0.
+# You may copy, modify, and use it for any purpose without permission.
+# 
+# Settings for Bluejay v0.21.0 on J-H-50
+bluejay_version: 0.21.0
+target: J-H-50
+esc_layout: 4in1 (2x)                 # or "single"
+
+defaults:
+  pwm_khz: 48
+  min_startup_pwr: 1000
+  max_startup_pwr: 1020
+  motor_timing: 22.5° (MediumHigh)
+  demag: Low
+  rpm_rampup: 9x
+  beacon:
+    beep_strength: 20
+    beacon_strenth: 80
+    beacon_delay: 10 minutes
+  safety:
+    esc_rating: 2S+
+    temp_protection: 140 C
+    force_edt: Off                    # On/Off
+  brake:
+    brake_on_stop: Off                # On/Off
+    max_breaking: 255
+
+motors:
+# If this is not done in hardware, reverse the motor spin direction here.
+  m1:
+    direction: Normal                 # Normal/Reverse
+    led: Off                          # On/Off
+  m2:
+    direction: Normal                 # Normal/Reverse
+    led: Off                          # On/Off
+  m3:
+    direction: Normal                 # Normal/Reverse
+    led: Off                          # On/Off
+  m4:
+    direction: Normal                 # Normal/Reverse
+    led: Off                          # On/Off
+  m5:
+    direction: Normal                 # Normal/Reverse
+    led: Off                          # On/Off
+  m6:
+    direction: Normal                 # Normal/Reverse
+    led: Off                          # On/Off

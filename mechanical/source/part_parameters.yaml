@@ -1,0 +1,27 @@
+# SPDX-License-Identifier: CC0-1.0
+
+# General part settings
+elephant_foot_chamfer: 0.4 mm # Chamfer the edges of the part to avoid the "elephant footing" of 3D prints. Compensating for the typical expansion of the first layers.
+
+###############################################
+# [1] Pre clearance gauge test values         #
+###############################################
+# Set heat-set threaded insert outer and knurl diameter
+# Values based on: https://www.ruthex.de/en/products/ruthex-gewindeeinsatz-m3-100-stuck-rx-m3x5-7-messing-gewindebuchsen
+threaded_insert_outer_diameter:    3.9 mm # Outer diameter of the threaded insert. This value should be below 5mm.
+threaded_insert_knurl_diameter:    4.6 mm # Diameter of the knurled section of the threaded insert. This value should be below 7mm.
+# Set the minimal wall thickness for chosen heat-set threaded insert
+threaded_insert_minimum_thickness: 1.6 mm # Additional material around the threaded insert (boss). This value is often below 2mm.
+# The minimal outer diameter of the threaded insert wall: threaded_insert_minimal_boss_diameter = threaded_insert_outer_diameter + threaded_insert_clearance + 2*threaded_insert_minimum_thickness
+
+###############################################
+# [2] Values based on clearance gauge results #
+###############################################
+# Heat-set threaded insert hole clearence
+threaded_insert_clearance:         0.2 mm # The amount added to the nominal diameter.
+# M3 screw through hole clearance
+m3_hole_diameter_clearance:        0.2 mm # The amount added to the nominal diameter.
+# M2 screw through hole clearance
+m2_hole_diameter_clearance:        0.2 mm # The amount added to the nominal diameter.
+# Fit of rotor arm mountings
+rotor_arm_mounting_clearence:      0.2 mm # The amount added to the nominal dimension.
