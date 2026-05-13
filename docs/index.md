@@ -9,11 +9,11 @@ Welcome to the COMET documentation! This documentation will guide you through th
 </div>
 
 Quick Links:
-  - Bill of Materials: [docs/bill_of_materials.ods](/docs/bill_of_materials.ods)
-  - Printing guide: [docs/printing.md](/docs/printing.md)
-  - Build manual: [docs/build.md](/docs/build.md)
-  - FCU and ESC configuration: [docs/config.md](/docs/config.md)
-  - Safety instructions: [docs/safety.md](/docs/safety.md)
+  - Bill of Materials: [docs/bill_of_materials.ods](./bill_of_materials.ods)
+  - Printing guide: [docs/printing.md](./printing.md)
+  - Build manual: [docs/build.md](./build.md)
+  - FCU and ESC configuration: [docs/config.md](./config.md)
+  - Safety instructions: [docs/safety.md](./safety.md)
 
 ## Software
 
@@ -69,7 +69,7 @@ git clone https://github.com/uastw-embsys/comet.git
   3) Update the parameters of the parts.
   4) Print the frame and miscellaneous parts. The frame needs ~200 g of filament.
 - Install heat-set inserts where specified.
-- For more detailed instructions, refer to the printing guide in [docs/printing.md](/docs/printing.md).
+- For more detailed instructions, refer to the printing guide in [docs/printing.md](./printing.md).
 
 ### 4) Assemble COMET
 
@@ -77,7 +77,7 @@ git clone https://github.com/uastw-embsys/comet.git
 - Assemble all subassemblies and finish the wiring.
 - Perform final checks to ensure that the build is correct.
 - Enjoy your self-built drone!
-- For more detailed instructions, refer to the build manual in [docs/build.md](/docs/build.md).
+- For more detailed instructions, refer to the build manual in [docs/build.md](./build.md).
 
 ### 5) Flash and configure the FCU and ESCs
 
@@ -87,11 +87,11 @@ git clone https://github.com/uastw-embsys/comet.git
 - Use the ESC Configurator to flash the target ESC with Bluejay firmware.
 - Apply the parameters and perform a power cycle for the ESC to take effect.
 - Verify the failsafe and the motor order and direction.
-- For more detailed instructions, refer to the FCU and ESC configuration in [docs/config.md](/docs/config.md).
+- For more detailed instructions, refer to the FCU and ESC configuration in [docs/config.md](./config.md).
 
 ### 6) First test flight!
 
-- Perform all checks according to the safety instructions found in the [`docs/safety.md`](/docs/safety.md) file.
+- Perform all checks according to the safety instructions found in the [`docs/safety.md`](./safety.md) file.
 - Let us know about your successful maiden flight!
 
 [Back to the top &#8593;](#documentation-index)
