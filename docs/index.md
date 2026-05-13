@@ -57,19 +57,19 @@ git clone https://github.com/uastw-embsys/comet.git
 
 ### 2) Order the non-printable parts
 
-- Refer to the "bill of materials" sheet in the [docs/bill_of_materials.ods](./bill_of_materials.ods) document. It contains a detailed list of parts grouped by subassemblies stemming from the [build manual](./build.md).
+- Refer to the "bill of materials" sheet in the [`docs/bill_of_materials.ods`](./bill_of_materials.ods) document. It contains a detailed list of parts grouped by subassemblies stemming from the build manual.
 - The "order list" sheet is recommended for the initial order of materials because it includes the initial purchase of filament spools that can be used for multiple drones. Do not order the filament spools if they are already available.
 
 ### 3) 3D print the frame
 
 - Ensure that the 3D printer is calibrated for the elephant foot and for over- and under-extrusion.
-- Use 3MF projects in `mechanical/prints/` that match your slicer and 3D printer.
+- Use 3MF projects in [`mechanical/prints/`](../mechanical/prints/) that match your slicer and 3D printer.
   1) Print the clearance gauge using the intended filament.
   2) Verify that the printed parts match the dimensions of the critical hole diameters and part clearances.
   3) Update the parameters of the parts.
   4) Print the frame and miscellaneous parts. The frame needs ~200 g of filament.
 - Install heat-set inserts where specified.
-- For more detailed instructions, refer to the printing guide in [docs/printing.md](./printing.md).
+- For more detailed instructions, refer to the printing guide in [`docs/printing.md`](./printing.md).
 
 ### 4) Assemble COMET
 
@@ -77,7 +77,7 @@ git clone https://github.com/uastw-embsys/comet.git
 - Assemble all subassemblies and finish the wiring.
 - Perform final checks to ensure that the build is correct.
 - Enjoy your self-built drone!
-- For more detailed instructions, refer to the build manual in [docs/build.md](./build.md).
+- For more detailed instructions, refer to the build manual in [`docs/build.md`](./build.md).
 
 ### 5) Flash and configure the FCU and ESCs
 
@@ -87,7 +87,7 @@ git clone https://github.com/uastw-embsys/comet.git
 - Use the ESC Configurator to flash the target ESC with Bluejay firmware.
 - Apply the parameters and perform a power cycle for the ESC to take effect.
 - Verify the failsafe and the motor order and direction.
-- For more detailed instructions, refer to the FCU and ESC configuration in [docs/config.md](./config.md).
+- For more detailed instructions, refer to the FCU and ESC configuration in [`docs/config.md`](./config.md).
 
 ### 6) First test flight!
 

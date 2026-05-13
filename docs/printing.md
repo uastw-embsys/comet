@@ -1,6 +1,33 @@
 <!-- SPDX-License-Identifier: CC-BY-SA-4.0 -->
 
-# 3D-Print Guide - NOTES
+# 3D-Print Guide
+
+### 3D Print
+
+ADD THE CALIBRATION PROCEDURE!
+
+In the [prints/](/../../mechanical/prints/) (computer-aided manufacturing) folder, select the printer that will be used to print the frame and/or accessory components. These folders contain the project files for the slicing software (converting 3D models into 3D printable objects). The print files are located in the printer's *gcode folder*. Select the appropriate material. The files named *comet_single_plate_...* refer to the complete frame; *comet_propeller_guards_...* are for printing a set of propeller guards only; and *comet_color-coding_accessories_...* are for printing non-functional pieces to distinguish between different setups.
+<div align="center">
+    <img src="./assets/images/finished_3D_print.jpg" width="60%">
+    <p>Fig. 1. The finished 3D-printed frame parts were produced using our research group's Prusa CORE One 3D printers. This build plate contains all the parts needed to assemble COMET.</p>
+</div>
+
+The 3D-printed frame requires the removal of support structures before proceeding. This concerns components battery holder (BH-01), XT30 connector mounts (YF-03), and ESC connector mount (YF-04). The figure below highlights these structures, which can be detached by applying a small amount of force with nose pliers.
+<div align="center">
+    <img src="./assets/images/supports_to_remove.jpg" width="60%">
+    <p>Fig. 2. Spots where the supports need to be removed.</p>
+</div>
+
+Additionally, the 3D print includes a ruler to measure the size of all the screws used in the build. Use it to ensure that you use the proper size screw for the task at hand.
+<div align="center">
+    <img src="./assets/images/screw_ruler_measuring_length.jpg" width="30%">
+    <img src="./assets/images/screw_ruler_measuring_diameter.jpg" width="40%">
+    <p>Fig. 3. Here is an example of how to measure the length (left) and diameter (right) of a screw.</p>
+</div>
+
+[Back to the top &#8593;](#table-of-contents)
+
+ADD Threaded insert preperation!.
 
 ### 3) 3D print the frame
 
@@ -59,4 +86,6 @@ Printed parts
   - Mesh: hardware/exports/stl/*.stl
   - Slicer projects: hardware/prints/3mf/
 
+## Next Step
 
+Assemble COMET using the build manual in [`docs/build.md`](./build.md).

@@ -8,7 +8,7 @@
 
 <!-- https://github.com/badges/shields -->
 <!-- ![GitHub Release](https://img.shields.io/github/v/release/uastw-embsys/comet?display_name=tag)  -->
-[![OSHWA: pending](https://img.shields.io/badge/OSHWA-certification%20pending-lightgrey)](#oshwa-certification) [![DOI: pending](https://img.shields.io/badge/DOI-pending-lightgrey)](#cite-this-work)
+[![OSHWA: pending](https://img.shields.io/badge/OSHWA-certification%20pending-lightgrey)](#oshwa-certification-planned) [![DOI: pending](https://img.shields.io/badge/DOI-pending-lightgrey)](#cite-this-work)
 
 ## Description
 
