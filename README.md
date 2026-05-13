@@ -63,7 +63,6 @@ In this repository, "mechanical" refers to printed parts, mechanical components,
 │   │   ├── fonts/                       # Fonts used in the project
 │   │   ├── images/                      # Pictures used in the project
 │   │   └── renders/                     # Exported screenshots and animations
-│   ├── assembly.md
 │   ├── bill_of_materials.ods            # Detailed list of all parts needed
 │   ├── build.md                         # Instructions for building COMET hardware
 │   ├── config.md                        # Instructions for configuring COMET electronics
