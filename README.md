@@ -218,19 +218,19 @@ Interim Compliance Summary:
 
 ### Authors (Credit roles in parentheses)
 
-- Christoph Böhm (Project initiator, developer, and maintainer) - [University of Applied Sciences Technikum Wien](https://www.technikum-wien.at/en/), [ORCID: 0000-0002-7650-5297](https://orcid.org/0000-0002-7650-5297), [Google Scholar](https://scholar.google.com/citations?user=uV0KBoEAAAAJ)
-- Roman Beneder (Project co-developer and test pilot) - [University of Applied Sciences Technikum Wien](https://www.technikum-wien.at/en/)
+- [Christoph Böhm](https://scholar.google.com/citations?user=uV0KBoEAAAAJ) (Project initiator, developer, and maintainer)
+- [Roman Beneder](https://embsys.technikum-wien.at/staff/beneder/index.php) (Project co-developer and test pilot)
 
 Corresponding author: **Christoph Böhm** - christoph.boehm@ieee.org
 
 ### Contributors
 
-- Johannes Anderle
-- Samuel Bauer
-- Christian Fibich
-- Ilva Heindl
-- Ana Kokic
-- Patrick Schmitt
+- [Johannes Anderle](https://embsys.technikum-wien.at/staff/anderle/index.php)
+- [Samuel Bauer](https://embsys.technikum-wien.at/staff/bauer/index.php)
+- [Christian Fibich](https://embsys.technikum-wien.at/staff/fibich/index.php)
+- [Ilva Heindl](https://embsys.technikum-wien.at/staff/heindl/index.php)
+- [Ana Kokic](https://embsys.technikum-wien.at/staff/kokic/index.php)
+- [Patrick Schmitt](https://embsys.technikum-wien.at/staff/schmitt/index.php)
 
 ### Acknowledgments
 
