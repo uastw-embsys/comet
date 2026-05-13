@@ -19,6 +19,9 @@ What this means
   - Local Coordinate Systems (LCS) used for constraints
 - params/
   - YAML parameter sets (e.g., `default.yaml`, variant files)
+- calibration/
+   Add a README.md in that folder explaining each test, the parameters they depend on (e.g., HoleClearance, InsertOD), and how to interpret results. With this parameter set, you can switch materials, printers, or variants by editing one params file, then run your headless script to recompute and re‑export all parts automatically.
+
 
 FreeCAD version
 - Designed and tested with 1.1.0.44227 +568 (Git) Snap 2266. Other versions may work but are not guaranteed.

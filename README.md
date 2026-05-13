@@ -61,7 +61,7 @@ In this repository, "mechanical" refers to printed parts, mechanical components,
 ├── docs/
 │   ├── assets/
 │   │   ├── fonts/                       # Fonts used in the project
-│   │   ├── images/                      # Pictures used in all Markdown files
+│   │   ├── images/                      # Pictures used in the project
 │   │   └── renders/                     # Exported screenshots and animations
 │   ├── assembly.md
 │   ├── bill_of_materials.ods            # Detailed list of all parts needed
@@ -102,15 +102,14 @@ In this repository, "mechanical" refers to printed parts, mechanical components,
 │   └── source/
 │       ├── assemblies/                  # FreeCAD assemblies (A2plus workbench)
 │       ├── calibration/
-│       │   ├── clearance_gauge.FCStd
-│       │   └── README.md
+│       │   └── clearance_gauge.FCStd    # Test part to calibrate for printer and filament
 │       ├── macros/
 │       │   ├── apply_parameters.py      # Apply part settings to FreeCAD parts
-│       │   ├── common_fc.py
+│       │   ├── common_fc.py             # Commonly used functions and variables
 │       │   └── export_source.py         # FreeCAD export script
 │       ├── part_parameters.yaml         # FreeCAD YAML parameter file
 │       ├── parts/                       # FreeCAD part files (one Body per part)
-│       └── README.md
+│       └── README.md                    # Description to help navigate the "source"
 └── README.md
 ```
 
