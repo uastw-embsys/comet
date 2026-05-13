@@ -1,4 +1,5 @@
 <!-- SPDX-License-Identifier: CC-BY-SA-4.0 -->
+title:"COMET - Cost-efficient Open-Source Multicopter for Embedded-Systems Teaching"
 
 # Documentation Index
 
