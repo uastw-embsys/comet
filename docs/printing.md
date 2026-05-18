@@ -2,7 +2,7 @@
 
 # 3D-Print Guide
 
-This guide covers the calibration, materials and settings, file locations, printing steps, and post-processing of the COMET frame and its accessories.
+This guide covers the pre-print calibration, materials and settings, file locations, printing steps, and post-processing of the COMET frame and its accessories.
 
 Find the needed files here:
 - Slicer projects (recommended to use): [mechanical/prints/](./../mechanical/prints/)
@@ -15,38 +15,44 @@ Naming of the 3MF projects inside the slicer project folders:
 - Non-functional colored parts: `color-coding-*.3mf`
 
 ## Table of Contents
-- [Printer Calibration](#printer-calibration)
-- [Clearance Gauge](#clearance-gauge)
+- [Clearance Gauge Calibration](#clearance-gauge-calibration)
 - [3D Printing](#3d-printing)
 - [Post-Processing](#post-processing)
 - [Next Step](#next-step)
 
-## Printer Calibration
+## Clearance Gauge Calibration
 
-First, we calibrate the printer with the intended filament to achieve reliable hole clearances, flat first layers, and accurate dimensions within acceptable tolerances. You can skip any steps for which your 3D printer is already calibrated.
+To achieve precise hole clearances, flat first layers, and accurate dimensions, calibrate the printer with the intended filament. For more information, consult the manufacturer's manual or look into these helpful sources:
+- [Prusa Basic Calibration](https://help.prusa3d.com/category/basic-calibration_228)
+- [Detailed 3D Printer Calibration](https://teachingtechyt.github.io/calibration.html)
 
-### 1) Extrusion Multiplier
+Printer calibration is only effective to a certain extent, and some tolerances still remain. This step attempts to address the remaining uncertainty through the proper selection of clearances. A test print part is provided in this repository to determine the necessary clearance values for the threaded inserts and screws (M3 and M2), ensuring proper fit. The source can be found in the [mechanical/source/tools](./../mechanical/source/tools/) folder, named `clearance_gauge.FCStd`. We recommend using it for the frame print, and it is optional for color-coded parts.
 
-- Print a single-wall cube with 0% infill and no top or bottom, then measure the resulting wall thickness as described [here](https://help.prusa3d.com/article/.extrusion-multiplier-calibration_2257).
-- Adjust the extrusion multiplier so that the measured wall thickness matches the width of the nozzle (e.g., 0.40 mm for a 0.4 mm nozzle).
+<div align="center">
+    <img src="./assets/images/clearance_gauge_printed.jpg" width="40%">
+    <p>Fig. 1. The clearance gauge printed in PC CF on our lab's Prusa CORE One.</p>
+</div>
 
-### 2) First-layer and Elephant Foot
-
-- Fine-tune the Z-offset to prevent squish ridges and reduce elephant footing while ensuring optimal adhesion. Refer to the provided [examples](https://store.anycubic.com/blogs/3d-printing-guides/how-to-fine-tune-z-offset) for guidance.
-- If there is still some elephant footing remaining, set the `elephant_foot_chamfer` parameter in the [mechanical/source/part_parameters.yaml](./../mechanical/source/part_parameters.yaml) file to compensate for it in the CAD files themselves.
+### 1) Print the Clearence Gauge
 
 
-### 3) Bed leveling and Adhesion
 
-- Use automatic bed leveling or a [test pattern](https://help.prusa3d.com/article/bed-level-correction_2267) to ensure an even print surface.
-- Use a clean, appropriate surface for your material (e.g., the [Prusa Filament Material Guide](https://help.prusa3d.com/filament-material-guide) specifies which print sheets to use).
-- The heated bed temperature should be selected based on the type of filament being used. It should not be set too high, but high enough to ensure that the parts adhere to it.
+### 2) Determine Clearances
 
-[Back to the top &#8593;](#table-of-contents)
+<div align="center">
+    <img src="./assets/images/clearance_gauge_threaded_insert_1.jpg" width="35%">
+    <img src="./assets/images/clearance_gauge_threaded_insert_2.jpg" width="35%">
+    <img src="./assets/images/clearance_gauge_m3.jpg" width="35%">
+    <img src="./assets/images/clearance_gauge_m2.jpg" width="35%">
+    <p>Fig. XX. Text.</p>
+</div>
 
-## Clearance Gauge
+<div align="center">
+    <img src="./assets/images/clearance_gauge_rotor_arm.jpg" width="40%">
+    <p>Fig. XX. Text.</p>
+</div>
 
-Recommended for frame, optional for color-coding parts.
+
 
 Measure your threaded inserts (outer diameter, length, recommended pilot hole) from the datasheet or with calipers, then enter these values into the project’s parameter file (e.g., params/default.yaml). Apply the updated parameters and export a small test coupon: either open the 3MF project that contains the clearance gauge and slice it, or export the relevant STL/3MF to print the test piece.
 
@@ -60,6 +66,14 @@ get threaded insert measures, enter them into yaml, then apply & export. 3mf or 
 Determine in which clearance category M3, M2, and threaded inserts fit into the clearence gauge.
 
 Input values and apply & export, parts are now ready to print
+
+
+Before print set elephant foot in parameter, then update and export.
+If minor issues persist, set the elephant_foot_chamfer in your source code to compensate.
+
+
+
+### 3) Update the Parameter File
 
 [Back to the top &#8593;](#table-of-contents)
 
@@ -90,6 +104,7 @@ Follow docs/printing.md for materials, orientation, and post‑processing.
   - Top Solid layers: 6
   - Bottom Solid layers: 6
   - Infill: 20% Gyroid
+  - Cooling: minimal for PC‑CF/ABS (just enough for bridges); normal for PETG
   - Orientation: each STL is oriented “as printed”
 - Slicer profiles:  
   Provided 3MF projects for [PrusaSlicer](https://github.com/prusa3d/prusaslicer) in hardware/prints/3mf/ with per‑category settings.
@@ -105,6 +120,7 @@ Follow docs/printing.md for materials, orientation, and post‑processing.
 Printed parts
 - See ../../hardware/mechanical/exports/stl/ and manifest.csv for settings
 - Recommended materials: PC/CF (frame), and PETG (color-coding parts)
+2) Verify filament profile, nozzle, layer height, and cooling match the baseline above or the embedded profile.
 1) Print parts according to manifest and 3MF projects.
 2) Install heat-set inserts (where specified).
 
@@ -117,6 +133,11 @@ Printed parts
   - Write values in params/default.yaml
 - Test coupons: test/coupons/ includes hole ladders and insert gauges.
 
+Quality checks after printing
+- Critical thickness (arms/plates) within ±0.2 mm of nominal.
+- M3 fasteners pass freely through clearance holes after light reaming (if needed).
+- No layer splits, especially near screw bosses and arm roots.
+
 <div align="center">
     <img src="./assets/images/finished_3D_print.jpg" width="60%">
     <p>Fig. 1. The finished 3D-printed frame parts were produced using our research group's Prusa CORE One 3D printers. This build plate contains all the parts needed to assemble COMET.</p>
@@ -126,13 +147,82 @@ Printed parts
 
 ## Post-Processing
 
+### Removal supports
+
+The standard setting with support only build plate, will result in this.
+
 The 3D-printed frame requires the removal of support structures before proceeding. This concerns components battery holder (BH-01), XT30 connector mounts (YF-03), and ESC connector mount (YF-04). The figure below highlights these structures, which can be detached by applying a small amount of force with nose pliers.
 <div align="center">
     <img src="./assets/images/supports_to_remove.jpg" width="60%">
     <p>Fig. 2. Spots where the supports need to be removed.</p>
 </div>
 
-ADD Threaded insert preperation!.
+- Remove supports
+  - Parts with sacrificial supports (e.g., BH‑01 battery holder, YF‑03 XT30 mount, YF‑04 ESC mount) have supports highlighted in the figure below.
+
+### Threaded inserts
+- Use brass heat‑set inserts matching the BOM (typically M3).
+- Procedure:
+  1) Support the part on a flat surface. Align the insert square to the hole.
+  2) Heat the insert, press gently until the flange sits flush or to the modeled depth.
+  3) Keep light downward pressure while removing heat to avoid pull‑out.
+  4) Let cool fully; do not thread a screw while warm.
+- Tips:
+  - If an insert sits proud, reheat briefly and seat further. Do not force cold.
+  - If the pilot is too tight, touch the rim with a deburring tool before insertion.
+  - Use the provided insert gauge coupon in test/coupons/ to validate fit and temperature.
+
+### Preparation of Landing Gear Parts
+
+Thread inserts will be used throughout the build for easier assembly. These inserts are melted into the 3D-printed parts using a soldering iron with optional melting-aiding tips (see the tool list). If you have never worked with these type of threaded inserts before, this [tutorial video](https://www.youtube.com/watch?v=P7nHyI1TwKY) may be helpful. A note on the video: We achieved the best results with a temperature 15°C above the 3D printing temperature. For example, PC CF is printed at 290°C; therefore, the temperature should be set to 305°C. After setting the correct temperature, align the threaded inserts (LG-03) with the holes in the rotor arms (LG-02) and landing gear mounts (LG-01). 
+<div align="center">
+    <img src="./assets/images/thread_inserts_rotor_arm.jpg" width="49%">
+    <img src="./assets/images/thread_inserts_landing_gear_mount.jpg" width="49%">
+    <p>Fig. 27. Examples of how to best align the thread inserts for the rotor arms (left) and landing gear mounts (right). <span style="color:red">NOTE: UPDATE RIGHT IMAGE</span></p>
+</div>
+
+Hold the soldering iron tip against the insert. Once the insert is heated up, push it into the part until it is flush with the surface. During this procedure, keep the soldering iron perpendicular to the surface to ensure the inserts are not at an angle. Note that the inserts and the surrounding plastic will get hot and need to cool down.
+<div align="center">
+    <img src="./assets/images/prepared_rotor_arms.jpg" width="49%">
+    <img src="./assets/images/prepared_landing_gear_mount.jpg" width="49%">
+    <p>Fig. 28. Prepared rotor arms (left) and landing gear mounts (right). <span style="color:red">NOTE: UPDATE RIGHT IMAGE</span></p>
+</div>
+
+### Preparation of Battery Holder Parts
+
+To prepare the battery holder (BH-01) for assembly, melt the two thread inserts (BH-02) into the holes to the left and right of the text "COMET." Again, ensure that the inserts are perpendicular to the surface and that the correct temperature is selected (e.g., PC CF at 305°C).
+<div align="center">
+    <img src="./assets/images/battery_holder_thread_inserts_positioning.jpg" width="30%">
+    <img src="./assets/images/battery_holder_thread_inserts_finished.jpg" width="32.5%">
+    <p>Fig. 32. Preparation of the thread inserts (left) and finished preparation of the battery holder (right).</p>
+</div>
+
+### Preparation of Y-Frame Parts
+
+As with the landing gear, begin by melting the thread inserts (YF-06) into the bottom mounting plate (YF-01, only one piece), the XT30 connector mount (YF-03), the ESC connector mount (YF-04), and the quick release base (YF-05). Ensure the thread inserts are perpendicular to the surface and the right temperature is selected (e.g., PC CF 305°C).
+<div align="center">
+    <img src="./assets/images/thread_inserts_mounting_plate.jpg" width="49%">
+    <img src="./assets/images/prepared_mounting_plate.jpg" width="35.3%">
+    <p>Fig. 40. Example of how to best align the thread inserts for the bottom mounting plate (left). Prepared bottom mounting plate. All inserts should be flush with the bottom surface (right).</p>
+</div>
+<div align="center">
+    <img src="./assets/images/thread_inserts_xt30_000.png" width="43.2%">
+    <img src="./assets/images/prepared_xt30_000.png" width="43.2%">
+    <p>Fig. 41. Example of how to best align the thread inserts for the XT30 connector mount (left). The prepared XT30 connector mounts are mirrored (right). <span style="color:red">NOTE: UPDATE IMAGES</span></p>
+</div>
+
+The ESC connector mount (YF-04) and the quick release bases (YF-05) have thread inserts that face the mounting plates turned upside down. This ensures proper alignment of the components when they are mounted to the mounting plate. As illustrated in the figures, insert them into the holes upside down (with the smooth part of the insert facing up) and push them in until the knurl is in the component. The smooth surface should stick out.
+<div align="center">
+    <img src="./assets/images/thread_inserts_esc_connector_mount.jpg" width="49%">
+    <img src="./assets/images/prepared_esc_connector_mount.jpg" width="37.5%">
+    <p>Fig. 42. Example of how to best align the thread inserts for the ESC connector mount (left). Prepared ESC connector mount (right).</p>
+</div>
+<div align="center">
+    <img src="./assets/images/thread_inserts_quick_release.jpg" width="37.1%">
+    <img src="./assets/images/prepared_quick_release.jpg" width="30%">
+    <img src="./assets/images/prepared_quick_release_inverse_inserts_detail.jpg" width="28%">
+    <p>Fig. 43. Example of how to align the thread inserts for the quick release base (left) correctly. Prepared quick release bases (middle) and a detailed look at the inverse thread inserts (right).</p>
+</div>
 
 [Back to the top &#8593;](#table-of-contents)
 

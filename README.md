@@ -100,15 +100,17 @@ In this repository, "mechanical" refers to printed parts, mechanical components,
 │   │   └── README.md
 │   └── source/
 │       ├── assemblies/                  # FreeCAD assemblies (A2plus workbench)
-│       ├── calibration/
-│       │   └── clearance_gauge.FCStd    # Test part to calibrate for printer and filament
-│       ├── macros/
-│       │   ├── apply_parameters.py      # Apply part settings to FreeCAD parts
-│       │   ├── common_fc.py             # Commonly used functions and variables
-│       │   └── export_source.py         # FreeCAD export script
 │       ├── part_parameters.yaml         # FreeCAD YAML parameter file
 │       ├── parts/                       # FreeCAD part files (one Body per part)
+│       ├── tools/
+│       │   ├── clearance_gauge.FCStd    # Test part to calibrate for printer and filament
+│       │   ├── length_ruler.FCStd
+│       │   └── threaded_inserts_helper.FCStd
 │       └── README.md                    # Description to help navigate the "source"
+├── scripts/
+│   ├── apply_parameters.py      # Apply part settings to FreeCAD parts
+│   ├── common_fc.py             # Commonly used functions and variables
+│   └── export_source.py         # FreeCAD export script
 └── README.md
 ```
 

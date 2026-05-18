@@ -14,6 +14,8 @@ Additionally, the 3D print includes a ruler to measure the size of all the screw
     <img src="./assets/images/screw_ruler_measuring_diameter.jpg" width="40%">
     <p>Fig. 3. Here is an example of how to measure the length (left) and diameter (right) of a screw.</p>
 </div>
+Screw sizing aid
+- A printed screw ruler is included on some plates. Use it to confirm screw length and diameter before assembly.
 
 ## Table of Contents
 - [Motor Block](#motor-block)
@@ -223,12 +225,12 @@ Store the M3 self-locking nuts (ES-08) for the final assembly.
 The landing gear is an important part of a drone because it ensures stability before take off. Three contact points are sufficient for stability, so this hexacopter with a Y configuration only needs three landing gear legs. Note that the rotor arms serve as legs, reducing the complexity and number of 3D-printed parts. All parts for this subgroup are labeled with the prefix "LG-*" in the [bill of materials](./bill_of_materials.ods). The following steps show how to assemble one landing gear.
 <div align="center">
     <img src="./assets/images/parts_landing_gears_annotated.png" width="60%">
-    <p>Fig. 26. All parts needed to build the three landing gears of COMET. <span style="color:red">NOTE: UPDATE IMAGE</span></p>
+    <p>Fig. 26. All parts needed to build the three landing gears of COMET. <span style="color:red">NOTE: UPDATE IMAGE with pre-inserted parts!</span></p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
 
-### Preparation of Parts
+<!-- ### Preparation of Parts
 
 Thread inserts will be used throughout the build for easier assembly. These inserts are melted into the 3D-printed parts using a soldering iron with optional melting-aiding tips (see the tool list). If you have never worked with these type of threaded inserts before, this [tutorial video](https://www.youtube.com/watch?v=P7nHyI1TwKY) may be helpful. A note on the video: We achieved the best results with a temperature 15°C above the 3D printing temperature. For example, PC CF is printed at 290°C; therefore, the temperature should be set to 305°C. After setting the correct temperature, align the threaded inserts (LG-03) with the holes in the rotor arms (LG-02) and landing gear mounts (LG-01). 
 <div align="center">
@@ -244,7 +246,7 @@ Hold the soldering iron tip against the insert. Once the insert is heated up, pu
     <p>Fig. 28. Prepared rotor arms (left) and landing gear mounts (right). <span style="color:red">NOTE: UPDATE RIGHT IMAGE</span></p>
 </div>
 
-[Back to the top &#8593;](#table-of-contents)
+[Back to the top &#8593;](#table-of-contents) -->
 
 ### Mechanical Assembly
 
@@ -265,12 +267,12 @@ Put the rotor arm (LG-02) into the landing gear mount (LG-01) and secure it with
 This subgroup holds the battery that powers the entire drone. All parts for this subgroup are labeled with the prefix "BH-*" in the bill of materials. The following steps show how to assemble the battery holder.
 <div align="center">
     <img src="./assets/images/parts_battery_holder_annotated.png" width="60%">
-    <p>Fig. 31. All parts needed to assemble the battery holder of COMET.</p>
+    <p>Fig. 31. All parts needed to assemble the battery holder of COMET. <span style="color:red">NOTE: UPDATE IMAGE with threaded insert parts</span></p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
 
-### Preparation of Parts
+<!-- ### Preparation of Parts
 
 To prepare the battery holder (BH-01) for assembly, melt the two thread inserts (BH-02) into the holes to the left and right of the text "COMET." Again, ensure that the inserts are perpendicular to the surface and that the correct temperature is selected (e.g., PC CF at 305°C).
 <div align="center">
@@ -279,7 +281,7 @@ To prepare the battery holder (BH-01) for assembly, melt the two thread inserts 
     <p>Fig. 32. Preparation of the thread inserts (left) and finished preparation of the battery holder (right).</p>
 </div>
 
-[Back to the top &#8593;](#table-of-contents)
+[Back to the top &#8593;](#table-of-contents) -->
 
 ### Mechanical Assembly
 
@@ -343,12 +345,12 @@ To assemble the RC receiver mount, first connect the cable (RC-03) to the RC rec
 The most important step in the build is assembling the drone's frame because all of its components work together to make the drone fly. The FCU and ESC stack are mounted and connected to the frame. The motors and propellers will also be attached to it. Lastly, the frame carries the power supply in the form of a battery. The Y frame design is different from the conventional hexacopters. It provides redundancy in propulsion and allows for the carrying of front-heavy payloads. All parts for this subgroup are labeled with the prefix "YF-*" in the [bill of materials](./bill_of_materials.ods). The following steps demonstrate how to assemble the drone's frame.
 <div align="center">
     <img src="./assets/images/parts_y_frame_annotated.png" width="60%">
-    <p>Fig. 39. All parts needed to build the Y frame of COMET.</p>
+    <p>Fig. 39. All parts needed to build the Y frame of COMET. <span style="color:red">NOTE: UPDATE IMAGE with threaded insert parts</span></p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
 
-### Preparation of Parts
+<!-- ### Preparation of Parts
 
 As with the landing gear, begin by melting the thread inserts (YF-06) into the bottom mounting plate (YF-01, only one piece), the XT30 connector mount (YF-03), the ESC connector mount (YF-04), and the quick release base (YF-05). Ensure the thread inserts are perpendicular to the surface and the right temperature is selected (e.g., PC CF 305°C).
 <div align="center">
@@ -375,7 +377,7 @@ The ESC connector mount (YF-04) and the quick release bases (YF-05) have thread 
     <p>Fig. 43. Example of how to align the thread inserts for the quick release base (left) correctly. Prepared quick release bases (middle) and a detailed look at the inverse thread inserts (right).</p>
 </div>
 
-[Back to the top &#8593;](#table-of-contents)
+[Back to the top &#8593;](#table-of-contents) -->
 
 ### Assembly top Mounting Plate
 
