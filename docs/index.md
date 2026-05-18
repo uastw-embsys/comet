@@ -50,24 +50,23 @@ The following steps will guide you through the process of building your very own
 ### 1) Get the files
 
 - Download one of the [release ZIPs](https://github.com/uastw-embsys/comet/releases)
-- Or clone the repository:
+- OR clone the repository:
 ```bash
 git clone https://github.com/uastw-embsys/comet.git
 ```
 
 ### 2) Order the non-printable parts
 
-- Refer to the "bill of materials" sheet in the [`docs/bill_of_materials.ods`](./bill_of_materials.ods) document. It contains a detailed list of parts grouped by subassemblies stemming from the build manual.
-- The "order list" sheet is recommended for the initial order of materials because it includes the initial purchase of filament spools that can be used for multiple drones. Do not order the filament spools if they are already available.
+- Refer to the "bill of materials" sheet in [`docs/bill_of_materials.ods`](./bill_of_materials.ods). It contains a detailed list of parts grouped by subassemblies from the build manual.
+- Use the "order list" sheet for recommended parts, including filament spools for multiple drones. Don't order filament spools if they're already available.
 
 ### 3) 3D print the frame
 
-- Ensure that the 3D printer is calibrated for the elephant foot and for over- and under-extrusion.
-- Use 3MF projects in [`mechanical/prints/`](../mechanical/prints/) that match your slicer and 3D printer.
-  1) Print the clearance gauge using the intended filament.
-  2) Verify that the printed parts match the dimensions of the critical hole diameters and part clearances.
-  3) Update the parameters of the parts.
-  4) Print the frame and miscellaneous parts. The frame needs ~200 g of filament.
+- Make sure the 3D printer is properly calibrated (e.g., [elephant footing](https://store.anycubic.com/blogs/3d-printing-guides/how-to-fine-tune-z-offset) and [over- or under-extrusion](https://help.prusa3d.com/article/.extrusion-multiplier-calibration_2257)).
+- Print the gauge with the frame part filament and update parts based on clearances.
+- 3D print the frame and color-code parts:
+  - Use 3MF projects in [`mechanical/prints/`](./../mechanical/prints/) that match your slicer and 3D printer
+  - OR set up your own slicer project and use the provided projects as a reference.
 - Install heat-set inserts where specified.
 - For more detailed instructions, refer to the printing guide in [`docs/printing.md`](./printing.md).
 
@@ -81,17 +80,15 @@ git clone https://github.com/uastw-embsys/comet.git
 
 ### 5) Flash and configure the FCU and ESCs
 
-- Flash the official INAV 8.0.1 for your target onto the flight controller board.
-- Apply the diff-*.txt file to the COMET settings in INAV, then save and reboot.
-- Calibrate the accelerometer, magnetometer, and  radio.
-- Use the ESC Configurator to flash the target ESC with Bluejay firmware.
-- Apply the parameters and perform a power cycle for the ESC to take effect.
-- Verify the failsafe and the motor order and direction.
+- Flash the official INAV 8.0.1 to the FCU, then apply the settings in the INAV CLI.
+- Calibrate the accelerometer, magnetometer, and radio.
+- Use the ESC Configurator to flash the Bluejay firmware onto the ESCs and apply the parameters.
+- Verify the failsafes, motor order, and spin directions.
 - For more detailed instructions, refer to the FCU and ESC configuration in [`docs/config.md`](./config.md).
 
 ### 6) First test flight!
 
 - Perform all checks according to the safety instructions found in the [`docs/safety.md`](./safety.md) file.
-- Let us know about your successful maiden flight!
+- Share your experience and first flight with us!
 
 [Back to the top &#8593;](#documentation-index)

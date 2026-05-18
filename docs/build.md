@@ -2,88 +2,53 @@
 
 # Build Manual
 
-## Table of Contents
-
-- [Preparation](#preparation)
-  - [Bill of Materials](#bill-of-materials)
-  - [Tools](#tools)
-  - [3D Print](#3d-print)
-- [The Build](#the-build)
-  - [Motor Block](#motor-block)
-    - [MR30 Connector](#mr30-connector)
-    - [Mounting the Motors](#mounting-the-motors)
-    - [Mechanical Assembly](#mechanical-assembly)
-  - [ESC Stack](#esc-stack)
-    - [ESC Connector Cable](#esc-connector-cable)
-    - [Combining ESCs](#combining-escs)
-  - [Landing Gear](#landing-gear)
-    - [Preparation of Parts](#preparation-of-parts)
-    - [Mechanical Assembly](#mechanical-assembly-1)
-  - [Battery Holder](#battery-holder)
-    - [Preparation of Parts](#preparation-of-parts-1)
-    - [Mechanical Assembly](#mechanical-assembly-2)
-  - [RC Receiver](#rc-receiver)
-    - [Connector Modification](#connector-modification)
-    - [Preparation RC receiver](#preparation-rc-receiver)
-    - [Mechanical Assembly](#mechanical-assembly-3)
-  - [Y Frame](#y-frame)
-    - [Preparation of Parts](#preparation-of-parts-2)
-    - [Assembly top Mounting Plate](#assembly-top-mounting-plate)
-    - [Assembly bottom Mounting Plate](#assembly-bottom-mounting-plate)
-    - [Mechanical Assembly](#mechanical-assembly-4)
-  - [Putting COMET together](#putting-comet-together)
-    - [Adding the Landing Gear](#adding-the-landing-gear)
-    - [Adding the Motor Blocks](#adding-the-motor-blocks)
-    - [Adding the ESC Stack](#adding-the-esc-stack)
-    - [Adding the Battery Holder](#adding-the-battery-holder)
-    - [Adding the RC receiver](#adding-the-rc-receiver)
-    - [Adding the Handle](#adding-the-handle)
-  - [Final Checks](#final-checks)
-- [Finished Build](#finished-build)
-
-## Preparation
-
-The first step is to prepare all the necessary parts and tools. This includes ordering materials, 3D printing the frame, post-processing the prints, and gathering the necessary tools.
-
-[Back to the top &#8593;](#table-of-contents)
-
-### Bill of Materials
-
-The [bill of materials](/../bill_of_materials.ods) lists all the necessary parts and their locations on COMET. The *shopping list* register shows the quantity of each part needed, and the source column indicates where the parts can be ordered.
-
-[Back to the top &#8593;](#table-of-contents)
-
-### Tools
-
-The following is a list of the tools needed to build COMET:
-- length ruler (from the 3D-printed frame parts)
-- side cutter
-- nose plier
-- soldering iron, solder, and flux
-- 1.5mm allen key
-- 2.5mm allen key
-- 5.5mm open-jaw wrench
-- tweezers
-- zip ties (different sizes)
-- shrinking tube (different sizes)
-- (optional) cable striper
-- (optional) threaded inserts melting [aid set](https://www.3djake.com/ruthex/soldering-tips-melting-aid-set?similar_products_d_a=30899)
-
-[Back to the top &#8593;](#table-of-contents)
-
-
-
-## The Build
-
 At the beginning of the assembly process, gather all the necessary components and tools. The assembly process is divided into subgroups that come together to form the complete drone.
 <div align="center">
     <img src="./assets/images/one_drone_kit.jpg" width="60%">
-    <p>Fig. 4. Pre-built student kit for the EDUCON 2026 paper submission. The displayed parts may differ from the latest version of COMET.</p>
+    <p>Fig. 1. Pre-built student kit for the EDUCON 2026 paper submission. The displayed parts may differ from the latest version of COMET.</p>
 </div>
 
-[Back to the top &#8593;](#table-of-contents)
+Additionally, the 3D print includes a ruler to measure the size of all the screws used in the build. Use it to ensure that you use the proper size screw for the task at hand.
+<div align="center">
+    <img src="./assets/images/screw_ruler_measuring_length.jpg" width="30%">
+    <img src="./assets/images/screw_ruler_measuring_diameter.jpg" width="40%">
+    <p>Fig. 3. Here is an example of how to measure the length (left) and diameter (right) of a screw.</p>
+</div>
 
-### Motor Block
+## Table of Contents
+- [Motor Block](#motor-block)
+  - [MR30 Connector](#mr30-connector)
+  - [Mounting the Motors](#mounting-the-motors)
+  - [Mechanical Assembly](#mechanical-assembly)
+- [ESC Stack](#esc-stack)
+  - [ESC Connector Cable](#esc-connector-cable)
+  - [Combining ESCs](#combining-escs)
+- [Landing Gear](#landing-gear)
+  - [Preparation of Parts](#preparation-of-parts)
+  - [Mechanical Assembly](#mechanical-assembly-1)
+- [Battery Holder](#battery-holder)
+  - [Preparation of Parts](#preparation-of-parts-1)
+  - [Mechanical Assembly](#mechanical-assembly-2)
+- [RC Receiver](#rc-receiver)
+  - [Connector Modification](#connector-modification)
+  - [Preparation RC receiver](#preparation-rc-receiver)
+  - [Mechanical Assembly](#mechanical-assembly-3)
+- [Y Frame](#y-frame)
+  - [Preparation of Parts](#preparation-of-parts-2)
+  - [Assembly top Mounting Plate](#assembly-top-mounting-plate)
+  - [Assembly bottom Mounting Plate](#assembly-bottom-mounting-plate)
+  - [Mechanical Assembly](#mechanical-assembly-4)
+- [Putting COMET together](#putting-comet-together)
+  - [Adding the Landing Gear](#adding-the-landing-gear)
+  - [Adding the Motor Blocks](#adding-the-motor-blocks)
+  - [Adding the ESC Stack](#adding-the-esc-stack)
+  - [Adding the Battery Holder](#adding-the-battery-holder)
+  - [Adding the RC receiver](#adding-the-rc-receiver)
+  - [Adding the Handle](#adding-the-handle)
+- [Final Checks](#final-checks)
+- [Finished Build](#finished-build)
+
+## Motor Block
 
 To assemble a full hexacopter setup in a Y configuration, three motor blocks are required. These connect the motors and propellers to the drone, making it possible to control the aircraft. All parts for this subgroup are labeled with the prefix "MB-*" in the [bill of materials](./bill_of_materials.ods). The following steps show how to assemble one motor block.
 <div align="center">
@@ -93,7 +58,7 @@ To assemble a full hexacopter setup in a Y configuration, three motor blocks are
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### MR30 Connector
+### MR30 Connector
 
 All brushless DC (BLDC) motors are connected to their respective electronic speed controllers (ESCs) via MR30 connectors, which are common in the drone community. First, attach the male MR30 connectors (MB-05, the ones with the pins inside the connector) to the BLDC motors (MB-01). Then, use a measuring tape or the supplied length ruler to cut the motors' cables to a length of around 5cm from the motor hub.
 <div align="center">
@@ -124,7 +89,7 @@ Put the propellers (MB-09) and M2 x 8mm screws (MB-10) aside for later propeller
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Mounting the Motors
+### Mounting the Motors
 
 After attaching the male MR30 connectors to the BLDC motors, assemble the motor blocks. Begin with the six motor block halves. Mount the BLDC motor (MB-02) to the motor mount (MB-01) using the M2 x 5mm screws and washers (MB-03 and MB-04). If the motors only come with M2 x 6mm or M2 x 7mm screws, add an appropriate motor mount spacer between the motor and the mount. Ensure that the BLDC motor aligns with the mounting holes, allowing its cables to angle slightly to the left (see Fig. 10, right image). Before tightening the screws, verify that they do not touch the motor windings. All steps are depicted in Fig. 10 for clarity. Figure 11 shows an assembled motor block half for reference.
 <div align="center">
@@ -140,7 +105,7 @@ After attaching the male MR30 connectors to the BLDC motors, assemble the motor 
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Mechanical Assembly
+### Mechanical Assembly
 
 Next, take two motor block halves and screw them together using two M3 x 25mm screws (MB-06), four M3 washers (MB-07), and two M3 self-locking nuts (MB-08). All involved steps are depicted in Fig. 12. These steps need to be repeated three times, resulting in three fully assembled motor blocks ready for use.
 <div align="center">
@@ -156,7 +121,7 @@ Store the remaining M3 x 25mm screws (MB-06), M3 washers (MB-07), and M3 self-lo
 
 [Back to the top &#8593;](#table-of-contents)
 
-### ESC Stack
+## ESC Stack
 
 Electronic speed controllers (ESCs) are vital components of the drone because they control the BLDC motors and keep the drone airborne. These ESCs are accessible via a standardized IDC connector connected to the FCU, which supplies power to the FCU too. All parts for this subgroup are labeled with the prefix "ES-*" in the [bill of materials](./bill_of_materials.ods). The following steps illustrate how to assemble the COMET ESC stack. If the ESCs do not have rubber vibration dampers, install them first, placing the short end on the JST connector side!
 <div align="center">
@@ -166,7 +131,7 @@ Electronic speed controllers (ESCs) are vital components of the drone because th
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### ESC Connector Cable
+### ESC Connector Cable
 
 First, we need to manufacture the ESC cable that connects both ESCs through the JST SH connectors with the FCU. The ESC closer to the capacitor and mounting plate is called ESC #1, and the one below it is called ESC #2 (as indicated with the positioning in Fig. 15).
 <div align="center">
@@ -216,7 +181,7 @@ Do not connect the assembled ESC connector cable to the ESC yet. Store it for fi
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Combining ESCs
+### Combining ESCs
 
 Begin assembling the ESC stack by cutting the silicone cables (ES-07) into 18 equal pieces, each 15cm long. Save the remaining cables as spares. Remove approximately 3mm of insulation from one side of each cable and apply solder to the exposed copper wire. Then, solder the motor cable strands to the pads of motors 1, 2, and 3 for both ESC #1 and ESC #2. Each ESC should now have nine motor cables attached to it. To make the final assembly easier, label the motor connector cable on ESC #1 from M1 to M3, and label the motor connector cable on ESC #2 from M4 to M6.
 <div align="center">
@@ -253,7 +218,7 @@ Store the M3 self-locking nuts (ES-08) for the final assembly.
 
 [Back to the top &#8593;](#table-of-contents)
 
-### Landing Gear
+## Landing Gear
 
 The landing gear is an important part of a drone because it ensures stability before take off. Three contact points are sufficient for stability, so this hexacopter with a Y configuration only needs three landing gear legs. Note that the rotor arms serve as legs, reducing the complexity and number of 3D-printed parts. All parts for this subgroup are labeled with the prefix "LG-*" in the [bill of materials](./bill_of_materials.ods). The following steps show how to assemble one landing gear.
 <div align="center">
@@ -263,7 +228,7 @@ The landing gear is an important part of a drone because it ensures stability be
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Preparation of Parts
+### Preparation of Parts
 
 Thread inserts will be used throughout the build for easier assembly. These inserts are melted into the 3D-printed parts using a soldering iron with optional melting-aiding tips (see the tool list). If you have never worked with these type of threaded inserts before, this [tutorial video](https://www.youtube.com/watch?v=P7nHyI1TwKY) may be helpful. A note on the video: We achieved the best results with a temperature 15°C above the 3D printing temperature. For example, PC CF is printed at 290°C; therefore, the temperature should be set to 305°C. After setting the correct temperature, align the threaded inserts (LG-03) with the holes in the rotor arms (LG-02) and landing gear mounts (LG-01). 
 <div align="center">
@@ -281,7 +246,7 @@ Hold the soldering iron tip against the insert. Once the insert is heated up, pu
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Mechanical Assembly
+### Mechanical Assembly
 
 Put the rotor arm (LG-02) into the landing gear mount (LG-01) and secure it with an M3 x 10mm screw and washer (LG-05 and LG-04). Repeat these steps three times to assemble all landing gears.
 <div align="center">
@@ -295,7 +260,7 @@ Put the rotor arm (LG-02) into the landing gear mount (LG-01) and secure it with
 
 [Back to the top &#8593;](#table-of-contents)
 
-### Battery Holder
+## Battery Holder
 
 This subgroup holds the battery that powers the entire drone. All parts for this subgroup are labeled with the prefix "BH-*" in the bill of materials. The following steps show how to assemble the battery holder.
 <div align="center">
@@ -305,7 +270,7 @@ This subgroup holds the battery that powers the entire drone. All parts for this
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Preparation of Parts
+### Preparation of Parts
 
 To prepare the battery holder (BH-01) for assembly, melt the two thread inserts (BH-02) into the holes to the left and right of the text "COMET." Again, ensure that the inserts are perpendicular to the surface and that the correct temperature is selected (e.g., PC CF at 305°C).
 <div align="center">
@@ -316,7 +281,7 @@ To prepare the battery holder (BH-01) for assembly, melt the two thread inserts 
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Mechanical Assembly
+### Mechanical Assembly
 
 To assemble this subgroup, stick the silicone pad (BH-05) centered to the bottom of the battery holder. Then, thread the battery strap (BH-06) through the openings on the bottom of the battery holder (see Fig. 28 for reference).
 <div align="center">
@@ -329,7 +294,7 @@ Save the remaining M3 x 25mm screws (BH-03) and M3 washers (BH-04) for the final
 
 [Back to the top &#8593;](#table-of-contents)
 
-### RC Receiver
+## RC Receiver
 
 In order to control a drone with an RC remote through the flight control unit (FCU), one needs to add an RC receiver to it. All parts for this subgroup are labeled with the prefix "RC-*" in the [bill of materials](./bill_of_materials.ods). The following steps demonstrate how to assemble the rc receiver mount.
 <div align="center">
@@ -339,7 +304,7 @@ In order to control a drone with an RC remote through the flight control unit (F
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Connector Modification
+### Connector Modification
 
 To ensure the correct connection between the selected RC receiver (RC-02, [FlySky FS-A8S](https://www.flysky-cn.com/a8sspecifications?rq=FS-A8S)) and our chosen FCU (FC-01, [MicoAir H743 V2](https://micoair.com/flightcontroller_micoair743v2/), SBUS/CRSP port), it is necessary to modify the connector cable (RC-03). First, completely remove the green cable (one of the two outer cables) from both ends of the connector. Next, remove the yellow cable from one connector and insert it into the spot where the green cable was (connecting the SBUS/i-BUS signal to the FCU input). Attention: This step may differ depending on the FCU and RC receiver combination. Please refer to the respective user manuals for more information!
 <div align="center">
@@ -349,7 +314,7 @@ To ensure the correct connection between the selected RC receiver (RC-02, [FlySk
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Preparation RC receiver
+### Preparation RC receiver
 
 Apply a small cut piece of the double-sided tape (often include in the packkage), and ensure that the status LED of the receiver is not obstructed.
 <div align="center">
@@ -359,7 +324,7 @@ Apply a small cut piece of the double-sided tape (often include in the packkage)
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Mechanical Assembly
+### Mechanical Assembly
 
 To assemble the RC receiver mount, first connect the cable (RC-03) to the RC receiver (RC-02). Then, remove the protection film from the double-sided tape. Thread the antenna of the RC receiver into the tube-like retainer of the mount (RC-01) and stick the receiver to the mount. Make sure the receiver's connector sits on the "ledge" to avoid it getting loose. Finally, secure the cable and receiver with zip ties.
 <div align="center">
@@ -373,7 +338,7 @@ To assemble the RC receiver mount, first connect the cable (RC-03) to the RC rec
 
 [Back to the top &#8593;](#table-of-contents)
 
-### Y Frame
+## Y Frame
 
 The most important step in the build is assembling the drone's frame because all of its components work together to make the drone fly. The FCU and ESC stack are mounted and connected to the frame. The motors and propellers will also be attached to it. Lastly, the frame carries the power supply in the form of a battery. The Y frame design is different from the conventional hexacopters. It provides redundancy in propulsion and allows for the carrying of front-heavy payloads. All parts for this subgroup are labeled with the prefix "YF-*" in the [bill of materials](./bill_of_materials.ods). The following steps demonstrate how to assemble the drone's frame.
 <div align="center">
@@ -383,7 +348,7 @@ The most important step in the build is assembling the drone's frame because all
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Preparation of Parts
+### Preparation of Parts
 
 As with the landing gear, begin by melting the thread inserts (YF-06) into the bottom mounting plate (YF-01, only one piece), the XT30 connector mount (YF-03), the ESC connector mount (YF-04), and the quick release base (YF-05). Ensure the thread inserts are perpendicular to the surface and the right temperature is selected (e.g., PC CF 305°C).
 <div align="center">
@@ -412,7 +377,7 @@ The ESC connector mount (YF-04) and the quick release bases (YF-05) have thread 
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Assembly top Mounting Plate
+### Assembly top Mounting Plate
 
 Start by adding the XT30 connector to the top mounting plate, which is the one without the thread inserts. Then, insert the pre-wired XT30 cables (YF-07) into the prepared XT30 connector mounts (YF-03). Attach them to the mounting plate using the M3 x 10 mm screws (YF-09) and M3 washers (YF-08). Note that both XT30 mounts are mirrored.
 <div align="center">
@@ -440,7 +405,7 @@ Finally, insert the manufactured ESC connector cable from above into the cutout 
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Assembly bottom Mounting Plate
+### Assembly bottom Mounting Plate
 
 Next, take M3 x 30 mm screws (YF-11) and screw them into the thread inserts of the bottom mounting plate from the non-flush side.
 <div align="center">
@@ -455,7 +420,7 @@ Next, take M3 x 30 mm screws (YF-11) and screw them into the thread inserts of t
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Mechanical Assembly
+### Mechanical Assembly
 
 The final step for this subgroup is to combine the mounting plates with the rotor arms (YF-02) to complete the Y frame of COMET. First, insert the remaining M3 x 25 mm screws with M3 washers through the rotor arm mounting holes in the top mounting plate, which holds the XT30 connectors, ESC connector, and quick release base. Then, attach the rotor arms to the top mounting plate using these M3 x 25mm screws. Finally, put the bottom mounting plate at the bottom of the stack. Thread the XT30 and ESC connector cables through the center hole of the bottom mounting plate toward the ESC stack that will soon be mounted.
 <div align="center">
@@ -470,11 +435,11 @@ The final step for this subgroup is to combine the mounting plates with the roto
 
 [Back to the top &#8593;](#table-of-contents)
 
-### Putting COMET together
+## Putting COMET together
 
 Now that all the subgroups are complete, it's time to assemble the drone. The Y frame is the base of this operation, and one subgroup will be added to it at a time.
 
-#### Adding the Landing Gear
+### Adding the Landing Gear
 
 Align each of the three landing gear legs with the protruding M3 x 25 mm screws of the Y frame, making sure they are facing away from the center. Then, mount the legs to the Y frame with the screws.
 <div align="center">
@@ -484,7 +449,7 @@ Align each of the three landing gear legs with the protruding M3 x 25 mm screws 
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Adding the Motor Blocks
+### Adding the Motor Blocks
 
 Next, slide a motor block onto one rotor arm. Orient the motor so that the self-locking nuts point downward. This makes maintenance easier since all the nuts and screws are on one side. After that step, take one M3 x25mm screw (MB-06) with one M3 washer (MB-07) that were left over and put them through the last mounting hole. Secure the connection from below with another M3 washer (MB-07) and one M3 self-locking nut (MB-08). All of the steps are depicted in Fig. 48 and need to be repeated three times.
 <div align="center">
@@ -501,7 +466,7 @@ Before moving on to the next subgroup, it is helpful to label the motor connecto
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Adding the ESC Stack
+### Adding the ESC Stack
 
 Turn the entire assembly upside down to more easily mount the ESC stack, route the motor cables, and solder the remaining MR30 connectors. Push the ESC connectors to the top and the XT30 connectors' cables to the the bottom right to easily connect them to the power pads on ESC #2  (see Fig. 56, top left). Put the ESC stack onto the four M3 x 30mm screws and secure it with the stored M3 self-locking nuts (ES-08). Be sure that the labels on the motor pads of motors #1 and #2 are facing left, as shown in Fig. 56. Ensure the capacitor holder is flush with the mounting plate and that no cables are pinched. Finally, connect the ESC connectors to ESC #1 and ESC #2, respectively.
 <div align="center">
@@ -547,7 +512,7 @@ To complete this step, secure the motor connector cables to each rotor arm with 
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Adding the Battery Holder
+### Adding the Battery Holder
 
 Place the prepared battery holder over the wired ESC stack and attach it to the bottom mounting plate using the remaining M3 x 25mm screws (BH-03) and M3 washers (BH-04). Ensure that the XT60 cable and any other cables are not pinched or damaged in the process.
 <div align="center">
@@ -557,7 +522,7 @@ Place the prepared battery holder over the wired ESC stack and attach it to the 
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Adding the RC receiver
+### Adding the RC receiver
 
 First, remove the two M3 x 25mm screws and M3 washers securing the landing gear leg next to the XT60 power connector. Place the prepared RC receiver mount on top of the mounting plate, aligning the mounting holes. Finally, secure the RC receiver mount and the landing gear leg to the Y frame using the M3 x 25mm screws and M3 washers again.
 <div align="center">
@@ -567,7 +532,7 @@ First, remove the two M3 x 25mm screws and M3 washers securing the landing gear 
 
 [Back to the top &#8593;](#table-of-contents)
 
-#### Adding the Handle
+### Adding the Handle
 
 To attach the handle (CC-01) to the Y frame, slide it down from above onto the top mounting plate, aligning its mounting holes with the threaded inserts of the XT60 mounts (YF-03). Make sure the top pointer of the handle is aligned with the mounting holes on the top mounting plate, as seen in Fig. 63. Finally, secure the handle with the remaining two M3 x 10mm screws and M3 washers (YF-09 and YF-08).
 <div align="center">
@@ -578,7 +543,7 @@ To attach the handle (CC-01) to the Y frame, slide it down from above onto the t
 
 [Back to the top &#8593;](#table-of-contents)
 
-### Final Checks
+## Final Checks
 
 - The motor wires are strain-relieved and kept clear of the propellers.
 - There is no wobble, and the parts are secured firmly.
@@ -598,5 +563,11 @@ Congratulations! You successfully built COMET! Great job! 😃
     <img src="./assets/images/finished_build.jpg" width="49%">
     <p>Fig. 65. A fully assembled COMET in a FreeCAD (left) and in reality (right). <span style="color:red">NOTE: UPDATE RIGHT IMAGE</span></p>
 </div>
+
+[Back to the top &#8593;](#table-of-contents)
+
+## Next Step
+
+Flash and configure the FCU and ESCs of COMET according to the instructions in [`docs/config.md`](./config.md).
 
 [Back to the top &#8593;](#table-of-contents)

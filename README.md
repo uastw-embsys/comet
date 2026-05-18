@@ -137,10 +137,10 @@ All releases use a semantic versioning scheme: MAJOR.MINOR.PATCH (e.g., v1.0.0).
 
 Each release includes:
   - STEP and STL files for all printed parts
-  - 3MF and INI project files for different 3D printers
+  - 3MF and INI project files for the slicers and 3D printers currently supported
   - PDF of the bill of materials
   - PDF of the documentation (e.g., build manual)
-  - INAV and Bluejay configuration files
+  - INAV and Bluejay configuration files for the FCUs and ESCs that are currently supported
 
 [Back to the top &#8593;](#comet---cost-efficient-open-source-multicopter-for-embedded-systems-teaching)
 
