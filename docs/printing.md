@@ -2,7 +2,7 @@
 
 # 3D-Print Guide
 
-This guide covers the pre-print calibration, materials and settings, file locations, printing steps, and post-processing of the COMET frame and its accessories.
+This guide covers the pre-print calibration, materials and settings, printing steps, and post-processing of the COMET frame and its accessories.
 
 Find the needed files here:
 - Slicer projects (recommended to use): [mechanical/prints/](./../mechanical/prints/)
@@ -26,54 +26,59 @@ To achieve precise hole clearances, flat first layers, and accurate dimensions, 
 - [Prusa Basic Calibration](https://help.prusa3d.com/category/basic-calibration_228)
 - [Detailed 3D Printer Calibration](https://teachingtechyt.github.io/calibration.html)
 
-Printer calibration is only effective to a certain extent, and some tolerances still remain. This step attempts to address the remaining uncertainty through the proper selection of clearances. A test print part is provided in this repository to determine the necessary clearance values for the threaded inserts and screws (M3 and M2), ensuring proper fit. The source can be found in the [mechanical/source/tools](./../mechanical/source/tools/) folder, named `clearance_gauge.FCStd`. We recommend using it for the frame print, and it is optional for color-coded parts.
+Printer calibration is only effective to a certain extent, and some tolerances still remain. This step attempts to address the remaining uncertainty through the proper selection of clearances. This repository provides a test print part to determine the necessary clearance values for threaded inserts, M2 and M3 screws, and frame parts to ensure a proper fit. The source can be found in the [mechanical/source/tools](./../mechanical/source/tools/) folder, named `clearance_gauge.FCStd`. We recommend using it for the frame print, and it is optional for color-coded parts.
 
 <div align="center">
     <img src="./assets/images/clearance_gauge_printed.jpg" width="40%">
-    <p>Fig. 1. The clearance gauge printed in PC CF on our lab's Prusa CORE One.</p>
+    <p>Fig. P-1. The clearance gauge printed in PC CF on our research group's Prusa CORE One 3D printers</p>
 </div>
 
 ### 1) Print the Clearence Gauge
 
+First, find the outer and knurl diameters (`threaded_insert_outer_diameter` and `threaded_insert_knurl_diameter` in the parameters file) and minimum wall thickness (`threaded_insert_minimum_thickness` in the parameters file) of the M3 threaded inserts on the manufacturer's datasheet ([example](https://www.ruthex.de/cdn/shop/files/1Tabelle.PT05_eb2a30fa-5c34-46f8-b557-a6c432354560.jpg)), or measure them with calipers. Enter these values into lines L12, L13, and L14 in section "[1] Pre clearance gauge test values" of the part's parameter file [mechanical/source/part_parameters.yaml](./../mechanical/source/part_parameters.yaml).
 
+To proceed, apply the current part parameters and ensure that all exports and slicer projects are up to date by using the following commands in the cloned repository's root folder:
+
+```bash
+freecad.cmd -c scripts/apply_parameters.py
+freecad.cmd -c scripts/export_source.py
+```
+
+Print the clearance gauge using either the 3MF project `clearance-gauge-*.3mf` from a supported slicer and printer setup (look into [mechanical/prints/](./../mechanical/prints/)), OR use the exported STL or STEP files (look into [mechanical/exports/](./../mechanical/exports/)) to set up your own project.
 
 ### 2) Determine Clearances
+
+Once the print is complete, take one threaded insert, one M2, and one M3 screw (the length of the screws does not matter) from the ordered parts. Use the clearance gauge to determine which clearance your printer and filament combination needs for each part category, and note these values down for later.
+
+Insert each part into the corresponding test hole one at a time. Each "row" is a different test, and the "columns" represent increasing clearance values in millimeters from left to right. Aim for a smooth, non-loose fit for the clearance holes and a firm, pressable fit for the insert pilots.
 
 <div align="center">
     <img src="./assets/images/clearance_gauge_threaded_insert_1.jpg" width="35%">
     <img src="./assets/images/clearance_gauge_threaded_insert_2.jpg" width="35%">
     <img src="./assets/images/clearance_gauge_m3.jpg" width="35%">
     <img src="./assets/images/clearance_gauge_m2.jpg" width="35%">
-    <p>Fig. XX. Text.</p>
+    <p>Fig. P-2. Testing the smooth side of the threaded insert in row 1 (top left), the knurled side of the threaded insert in row 2 (top right), the fit of the M3 screws in row 3 (bottom left), and the fit of the M2 screw through hole in row 4 (bottom right).</p>
 </div>
+
+The last test is for fitting the rotor arms together with the landing gear mount to form the landing gear of COMET. This is the only occasion where 3D prints are put together, so care must be taken. A small rotor arm test piece is included in the clearance gauge and can be broken off. Try inserting this piece into the square holes that emulate the landing gear mount. Again, aim for a smooth, non-loose fit. Note this clearance value as well.
 
 <div align="center">
     <img src="./assets/images/clearance_gauge_rotor_arm.jpg" width="40%">
-    <p>Fig. XX. Text.</p>
+    <p>Fig. P-3. Testing the fit and clearance of the rotor arm and landing gear mount.</p>
 </div>
 
+### 3) Update the Project
 
+Use the resulting values and change lines L21, L23, L25, and L27 in section "[2] Values based on clearance gauge results" of the part's parameter file [mechanical/source/part_parameters.yaml](./../mechanical/source/part_parameters.yaml). You may want to adjust the value of the `elephant_foot_chamfer` parameter in line L4 to compensate for a potentially remainig elephant foot in your prints. This value determines the size of the chamfer applied to the bottom of every 3D-printed part.
 
-Measure your threaded inserts (outer diameter, length, recommended pilot hole) from the datasheet or with calipers, then enter these values into the project’s parameter file (e.g., params/default.yaml). Apply the updated parameters and export a small test coupon: either open the 3MF project that contains the clearance gauge and slice it, or export the relevant STL/3MF to print the test piece.
+Again, apply the current part parameters and ensure that all exports and slicer projects are up to date by using the following commands in the cloned repository's root folder:
 
-Print the clearance gauge and determine which categories produce proper fits for M3, M2, and the selected threaded inserts (aim for a smooth, non-loose fit for clearance holes and a firm, pressable fit for insert pilots). Use these results to refine the YAML values if needed. Once satisfied, apply the final parameters and export the full set of parts (3MF preferred to capture orientation and supports, or STL if you manage slicing separately). The parts are now ready to print with the validated clearances.
+```bash
+freecad.cmd -c scripts/apply_parameters.py
+freecad.cmd -c scripts/export_source.py
+```
 
-
-Dimensional accuracy and clearances
-
-get threaded insert measures, enter them into yaml, then apply & export. 3mf or export to print the test piece
-
-Determine in which clearance category M3, M2, and threaded inserts fit into the clearence gauge.
-
-Input values and apply & export, parts are now ready to print
-
-
-Before print set elephant foot in parameter, then update and export.
-If minor issues persist, set the elephant_foot_chamfer in your source code to compensate.
-
-
-
-### 3) Update the Parameter File
+Everything is now ready to print with proper clearances.
 
 [Back to the top &#8593;](#table-of-contents)
 

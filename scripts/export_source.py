@@ -40,68 +40,7 @@ except Exception as e:
     sys.stderr.write(f"Error: run with freecad --console (headless). {e}\n")
     sys.exit(1)
 
-# Define which parts to apply the parameters to
-PARTS = [
-    {
-        "fcstd": "validation/clearance_gauge.FCStd",
-        "label": "clearance_gauge",
-        # "mesh": {"linear": 0.10, "angular": 15.0, "relative": False},
-    },
-    {
-        "fcstd": "hardware/mechanical/source/parts/length_ruler.FCStd",
-        "label": "length_ruler",
-    },
-    {
-        "fcstd": "hardware/mechanical/source/parts/motor_mount.FCStd",
-        "label": "motor_mount",
-    },
-    {
-        "fcstd": "hardware/mechanical/source/parts/capacitor_holder.FCStd",
-        "label": "capacitor_holder",
-    },
-    {"fcstd": "hardware/mechanical/source/parts/rotor_arm.FCStd", "label": "rotor_arm"},
-    {
-        "fcstd": "hardware/mechanical/source/parts/landing_gear_mount.FCStd",
-        "label": "landing_gear_mount",
-    },
-    {
-        "fcstd": "hardware/mechanical/source/parts/battery_holder.FCStd",
-        "label": "battery_holder",
-    },
-    {
-        "fcstd": "hardware/mechanical/source/parts/rc_receiver_mount.FCStd",
-        "label": "rc_receiver_mount",
-    },
-    {
-        "fcstd": "hardware/mechanical/source/parts/mounting_plate.FCStd",
-        "label": "mounting_plate",
-    },
-    {
-        "fcstd": "hardware/mechanical/source/parts/quick_release_base.FCStd",
-        "label": "quick_release_base",
-    },
-    {
-        "fcstd": "hardware/mechanical/source/parts/esc_connector_mount.FCStd",
-        "label": "esc_connector_mount",
-    },
-    {
-        "fcstd": "hardware/mechanical/source/parts/motor_mount_1mm_spacer.FCStd",
-        "label": "motor_mount_1mm_spacer",
-    },
-    {
-        "fcstd": "hardware/mechanical/source/parts/motor_mount_2mm_spacer.FCStd",
-        "label": "motor_mount_2mm_spacer",
-    },
-    {"fcstd": "hardware/mechanical/source/parts/handle.FCStd", "label": "handle"},
-    {
-        "fcstd": "hardware/mechanical/source/parts/xt30_male_mount.FCStd",
-        "label": "xt30_male_mount",
-    },
-    # {
-    #     "fcstd": "hardware/mechanical/source/parts/template_part.FCStd",
-    #     "label": "template_part",
-    # },
-]
+from common import *
 
 
 def ensure_dir(path):
@@ -122,11 +61,9 @@ def export_one(item):
 
     fcstd = item["fcstd"]
     label = item["label"]  # base label, Body is expected to be labeled "B_<label>"
-    out_stl = (
-        "hardware/mechanical/exports/stl/" + item["label"] + ".stl"
-    )  # item.get("out_stl")
+    out_stl = "mechanical/exports/stl/" + item["label"] + ".stl"  # item.get("out_stl")
     out_step = (
-        "hardware/mechanical/exports/step/" + item["label"] + ".step"
+        "mechanical/exports/step/" + item["label"] + ".step"
     )  # item.get("out_step")
     out_3mf = item.get("out_3mf")
     mesh = item.get("mesh", {"linear": 0.1, "angular": 15.0, "relative": False})
