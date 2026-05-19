@@ -152,7 +152,9 @@ Quality checks after printing
 
 ## Post-Processing
 
-### Removal supports
+The final step is post-processing, which consists of removing the support and applying the threaded inserts. For the latter, prepare all the threaded inserts that were ordered.
+
+### 1) Remove Support
 
 The standard setting with support only build plate, will result in this.
 
@@ -165,7 +167,12 @@ The 3D-printed frame requires the removal of support structures before proceedin
 - Remove supports
   - Parts with sacrificial supports (e.g., BH‑01 battery holder, YF‑03 XT30 mount, YF‑04 ESC mount) have supports highlighted in the figure below.
 
-### Threaded inserts
+### 2) Remove Residuals
+
+
+
+### 3) Apply the Threaded Inserts
+
 - Use brass heat‑set inserts matching the BOM (typically M3).
 - Procedure:
   1) Support the part on a flat surface. Align the insert square to the hole.
@@ -177,7 +184,7 @@ The 3D-printed frame requires the removal of support structures before proceedin
   - If the pilot is too tight, touch the rim with a deburring tool before insertion.
   - Use the provided insert gauge coupon in test/coupons/ to validate fit and temperature.
 
-### Preparation of Landing Gear Parts
+#### Preparation of Landing Gear Parts
 
 Thread inserts will be used throughout the build for easier assembly. These inserts are melted into the 3D-printed parts using a soldering iron with optional melting-aiding tips (see the tool list). If you have never worked with these type of threaded inserts before, this [tutorial video](https://www.youtube.com/watch?v=P7nHyI1TwKY) may be helpful. A note on the video: We achieved the best results with a temperature 15°C above the 3D printing temperature. For example, PC CF is printed at 290°C; therefore, the temperature should be set to 305°C. After setting the correct temperature, align the threaded inserts (LG-03) with the holes in the rotor arms (LG-02) and landing gear mounts (LG-01). 
 <div align="center">
@@ -193,7 +200,7 @@ Hold the soldering iron tip against the insert. Once the insert is heated up, pu
     <p>Fig. 28. Prepared rotor arms (left) and landing gear mounts (right). <span style="color:red">NOTE: UPDATE RIGHT IMAGE</span></p>
 </div>
 
-### Preparation of Battery Holder Parts
+#### Preparation of Battery Holder Parts
 
 To prepare the battery holder (BH-01) for assembly, melt the two thread inserts (BH-02) into the holes to the left and right of the text "COMET." Again, ensure that the inserts are perpendicular to the surface and that the correct temperature is selected (e.g., PC CF at 305°C).
 <div align="center">
@@ -202,7 +209,7 @@ To prepare the battery holder (BH-01) for assembly, melt the two thread inserts 
     <p>Fig. 32. Preparation of the thread inserts (left) and finished preparation of the battery holder (right).</p>
 </div>
 
-### Preparation of Y-Frame Parts
+#### Preparation of Y-Frame Parts
 
 As with the landing gear, begin by melting the thread inserts (YF-06) into the bottom mounting plate (YF-01, only one piece), the XT30 connector mount (YF-03), the ESC connector mount (YF-04), and the quick release base (YF-05). Ensure the thread inserts are perpendicular to the surface and the right temperature is selected (e.g., PC CF 305°C).
 <div align="center">
