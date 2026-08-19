@@ -90,6 +90,8 @@ Everything is now ready to print with proper clearances.
 
 ## 3D Printing
 
+
+
 Pre-dry the filament: PC is highly hygroscopic. Before printing, ensure your Filament Dryer is set to 80\text{ }\text{\textdegree C} and dry the spool for 4 to 6 hours.
 
 Use 3MF projects in hardware/mechanical/exports/3mf/ or follow manifest.csv.
@@ -156,6 +158,8 @@ Quality checks after printing
     <p>Fig. P-4. The finished 3D-printed frame parts were produced using our research group's Prusa CORE One 3D printers. This build plate contains all the (functional) parts needed to assemble COMET.</p>
 </div>
 
+### Bill of Prints
+
 [Back to the top &#8593;](#table-of-contents)
 
 ## Post-Processing
@@ -172,118 +176,110 @@ Take a good look at the 3D-printed parts, e.g., check the general quality and lo
 
 [Back to the top &#8593;](#table-of-contents)
 
-### 2) Remove Support
+### 2) Remove Supports
 
-3D printing often requires support structures that hold the molten plastic in position during printing (e.g., for overhangs). The placement, density, and size of these supports often vary depending on the slicer software and print settings used. This results in different supports that need to be removed.
+3D printing often requires support structures that hold the molten plastic in position during printing (e.g., for overhangs). The amount, placement, density, and size of these supports often vary depending on the slicer software and print settings used.
 
-In order to further process the printed parts, those supports must first be removed. The parts of concern are the battery holder (BH-01), the RC receiver mount (RC-01), and the ESC connector mount (YF-04). These supports can be broken off by applying a small amount of force with a nose plier.
+In order to further process the printed parts, those supports must first be removed. The battery holder (BH-01) and the ESC connector mount (YF-04) will have supports attached to them. Depending on your slicer settings, support structures may also be present on the RC receiver mount (RC-01) and the XT30 male connector mounts (YF-03). These supports can be broken off by applying a small amount of force with a nose plier.
 <div align="center">
     <img src="./assets/images/supports_to_remove.jpg" width="60%">
-    <p>Fig. P-5. Shows places where supports need to be removed (based on PrusaSlicer).</p>
+    <p>Fig. P-5. Shows places where supports need to be removed.</p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
 
 ### 3) Apply the Threaded Inserts
 
-- Use brass heat‑set inserts matching the BOM (typically M3).
-- Procedure:
-  1) Support the part on a flat surface. Align the insert square to the hole.
-  2) Heat the insert, press gently until the flange sits flush or to the modeled depth.
-  3) Keep light downward pressure while removing heat to avoid pull‑out.
-  4) Let cool fully; do not thread a screw while warm.
-- Tips:
-  - If an insert sits proud, reheat briefly and seat further. Do not force cold.
-  - If the pilot is too tight, touch the rim with a deburring tool before insertion.
-  - Use the provided insert gauge coupon in test/coupons/ to validate fit and temperature.
+Threaded inserts will be used throughout the build for easier assembly. These get melted into the 3D-printed parts using a soldering iron with optional melting-aiding tips (see the tool list). If you have never worked with these type of threaded inserts before, this [tutorial video](https://www.youtube.com/watch?v=P7nHyI1TwKY) may be helpful. A note on the video: We achieved the best results with a temperature 15°C above the 3D printing temperature. For example, PC CF is printed at 290°C in our profiles; therefore, the temperature should be set to arround 305°C. 
+
+Support the 3d-printed part on a flat surface and align the threaded insert with the hole. The threaded insert's smooth surface should easily fit as the tolerances were calibrated before. Then, hold the soldering iron tip against the insert. Once the insert is heated up, push it into the part until it is flush with the surface. This usally does not require much force. During this procedure, keep the soldering iron perpendicular to the surface (or vertical) to ensure the inserts are not at an angle. Note that the threaded inserts and the surrounding plastic will get hot and need to cool down.
 
 [Back to the top &#8593;](#table-of-contents)
 
 #### a) Preparation of the Landing Gear Mounts
 
-Threaded inserts will be used throughout the build for easier assembly. These inserts are melted into the 3D-printed parts using a soldering iron with optional melting-aiding tips (see the tool list). If you have never worked with these type of threaded inserts before, this [tutorial video](https://www.youtube.com/watch?v=P7nHyI1TwKY) may be helpful. A note on the video: We achieved the best results with a temperature 15°C above the 3D printing temperature. For example, PC CF is printed at 290°C; therefore, the temperature should be set to 305°C. After setting the correct temperature, align the threaded inserts (LG-03) with the holes in the rotor arms (LG-02) and landing gear mounts (LG-01).
-
-THREE times
+**Repeat** the steps shown in the figure below **three times** for the full landing gear set.
 
 <div align="center">
     <img src="./assets/images/threaded_inserts_landing_gear_mount.jpg" width="32%">
     <img src="./assets/images/application_landing_gear_mount.jpg" width="32%">
     <img src="./assets/images/prepared_landing_gear_mount.jpg" width="32%">
-    <p>Fig. 27. The images show how to best align the threaded inserts for the landing gear mount (left), how to best apply the heat through the soldering iron (middle), and the finished preparation of the landing gear mount (right). Repeat each step three times for the full landing gear set.</p>
+    <p>Fig. P-<b>X</b>. The images show how to best align the threaded inserts for the landing gear mount (left), how to best apply the heat through the soldering iron (middle), and the finished preparation of the landing gear mount (right).</p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
 
 #### b) Preparation of the Rotor Arms (Landing Gear Legs)
 
-Hold the soldering iron tip against the insert. Once the insert is heated up, push it into the part until it is flush with the surface. During this procedure, keep the soldering iron perpendicular to the surface to ensure the inserts are not at an angle. Note that the inserts and the surrounding plastic will get hot and need to cool down.
-
-THREE times
+**Repeat** the steps shown in the figure below **three times** for the full landing gear set.
 
 <div align="center">
     <img src="./assets/images/threaded_inserts_rotor_arm.jpg" width="32%">
     <img src="./assets/images/application_rotor_arm.jpg" width="32%">
     <img src="./assets/images/prepared_rotor_arm.jpg" width="32%">
-    <p>Fig. P-X. The images show how to best align the threaded inserts for the rotor arm (left), how to best apply the heat through the soldering iron (middle), and the finished preparation of the rotor arm (right). Repeat each step three times for the full landing gear set.</p>
+    <p>Fig. P-<b>X</b>. The images show how to best align the threaded inserts for the rotor arm (left), how to best apply the heat through the soldering iron (middle), and the finished preparation of the rotor arm (right).</p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
 
 #### c) Preparation of the Battery Holder
 
-To prepare the battery holder (BH-01) for assembly, melt the two thread inserts (BH-02) into the holes to the left and right of the text "COMET." Again, ensure that the inserts are perpendicular to the surface and that the correct temperature is selected (e.g., PC CF at 305°C).
 <div align="center">
     <img src="./assets/images/battery_holder_thread_inserts_positioning.jpg" width="30%">
     <img src="./assets/images/battery_holder_thread_inserts_finished.jpg" width="30%">
-    <p>Fig. 32. Preparation of the thread inserts (left) and finished preparation of the battery holder (right).</p>
+    <p>Fig. P-<b>X</b>. The images show how to best align the threaded inserts for the battery holder (left) and the finished preparation of the battery holder (right). The soldering iron applies heat and force the same way as with the 3D prints of the landing gear.</p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
 
 #### d) Preparation of the Mounting Plate
 
-As with the landing gear, begin by melting the thread inserts (YF-06) into the bottom mounting plate (YF-01, only one piece), the XT30 connector mount (YF-03), the ESC connector mount (YF-04), and the quick release base (YF-05). Ensure the thread inserts are perpendicular to the surface and the right temperature is selected (e.g., PC CF 305°C).
+**Do** the steps shown in the figure below **only one time**. Even though two mounting plates were printed, the second one remains without threaded inserts.
+
 <div align="center">
     <img src="./assets/images/thread_inserts_mounting_plate.jpg" width="40%">
     <img src="./assets/images/prepared_mounting_plate.jpg" width="35%">
-    <p>Fig. 40. Example of how to best align the thread inserts for the bottom mounting plate (left). Prepared bottom mounting plate. All inserts should be flush with the bottom surface (right).</p>
+    <p>Fig. P-<b>X</b>. The images show how to best align the threaded inserts for the one mounting plate (left) and the finished preparation of the bone mounting plate (right).</p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
 
 #### e) Preparation of the XT30 Male Connector Mounts
 
-TWO times
+**Repeat** the steps shown in the figure below **two times** for both XT30 male connector mounts used.
 
 <div align="center">
     <img src="./assets/images/threaded_inserts_xt30_male_mount.jpg" width="32%">
     <img src="./assets/images/application_xt30_male_mount.jpg" width="32%">
     <img src="./assets/images/prepared_xt30_male_mount.jpg" width="32%">
-    <p>Fig. 27. Examples of how to best align the thread inserts for the landing gear mount (left), how to apply the force with to threaded insert (middle), and the finished preparation of the landing gear mount (right).</p>
+    <p>Fig. P-<b>X</b>. The images show how to best align the threaded inserts for the XT30 male connector mounts (left), how to best apply the heat through the soldering iron using the included helper (middle), and the finished preparation of the XT30 male connector mounts (right).</p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
 
 #### f) Preparation of the Quick Release Bases
 
-TWO times
+The quick release bases (YF-05) have thread inserts that face the mounting plates turned upside down (Fig. P-<b>X</b>. left image shows that for the top two threaded inserts). This ensures proper alignment of the components when they are mounted to the second mounting plate. As illustrated in the figure, insert them into the holes upside down (with the smooth part of the insert facing up) and push them in until the knurl is in the component. The smooth surface should stick out (Fig. P-<b>X</b>. right image).
+
+**Repeat** the steps shown in the figure below **two times** for both quick release bases used.
 
 <div align="center">
     <img src="./assets/images/thread_inserts_quick_release.jpg" width="40%">
     <img src="./assets/images/prepared_quick_release.jpg" width="25%">
     <img src="./assets/images/prepared_quick_release_inverse_inserts_detail.jpg" width="25%">
-    <p>Fig. 43. Example of how to align the thread inserts for the quick release base (left) correctly. Prepared quick release bases (middle) and a detailed look at the inverse thread inserts (right).</p>
+    <p>Fig. P-<b>X</b>. The images show how to best align the threaded inserts for the quick release bases (left) and the finished preparation of the quick release bases (right). The soldering iron applies heat and force the same way as with the 3D prints of the quick release bases.</p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
 
 #### g) Preparation of the ESC Connector Mount
 
-The ESC connector mount (YF-04) and the quick release bases (YF-05) have thread inserts that face the mounting plates turned upside down. This ensures proper alignment of the components when they are mounted to the mounting plate. As illustrated in the figures, insert them into the holes upside down (with the smooth part of the insert facing up) and push them in until the knurl is in the component. The smooth surface should stick out.
+The ESC connector mount (YF-04) also has thread inserts that face the mounting plates turned upside down as well (Fig. P-<b>X</b>. left image shows that for the top two threaded inserts). As with the quick release bases, insert them into the holes with the smooth part of the insert facing up. Push them in until the knurl is in the component and just the smooth surface sticks out (Fig. P-<b>X</b>. right image).
+
 <div align="center">
     <img src="./assets/images/thread_inserts_esc_connector_mount.jpg" width="40%">
     <img src="./assets/images/prepared_esc_connector_mount.jpg" width="40%">
-    <p>Fig. 42. Example of how to best align the thread inserts for the ESC connector mount (left). Prepared ESC connector mount (right).</p>
+    <p>Fig. P-<b>X</b>. The images show how to best align the threaded inserts for the ESC connector mount (left) and the finished preparation of the ESC connector mount (right). The soldering iron applies heat and force the same way as with the 3D prints of the ESC connector mount.</p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
