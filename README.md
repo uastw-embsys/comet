@@ -3,7 +3,7 @@
 # COMET - Cost-efficient Open-Source Multicopter for Embedded-Systems Teaching
 
 <div align="center">
-    <img src="./docs/assets/renders/comet_rotating.gif" width="50%" float="left">
+    <img src="./docs/assets/renders/comet_logo.png" width="50%" float="left">
 </div>
 
 <!-- https://github.com/badges/shields -->

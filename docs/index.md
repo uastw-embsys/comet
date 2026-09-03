@@ -5,7 +5,7 @@
 Welcome to the COMET documentation! This documentation will guide you through the processes of preparing, printing, assembling, setting up the electronics, configuring, and safely operating the drone.
 
 <div align="center">
-    <img src="./assets/images/comet.png" width="40%" float="left">
+    <img src="./assets/renders/comet_rotating.gif" width="50%" float="left">
 </div>
 
 Quick Links:
