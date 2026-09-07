@@ -64,7 +64,7 @@ git clone https://github.com/uastw-embsys/comet.git
 
 - Make sure the 3D printer is properly calibrated (e.g., [elephant footing](https://store.anycubic.com/blogs/3d-printing-guides/how-to-fine-tune-z-offset) and [over- or under-extrusion](https://help.prusa3d.com/article/.extrusion-multiplier-calibration_2257)).
 - Print the gauge with the frame part filament and update parts based on clearances.
-- 3D print the frame and color-code parts:
+- 3D print the frame and color-coded parts:
   - Use 3MF projects in [`mechanical/prints/`](./../mechanical/prints/) that match your slicer and 3D printer
   - OR set up your own slicer project and use the provided projects as a reference.
 - Install heat-set inserts where specified.
@@ -80,7 +80,7 @@ git clone https://github.com/uastw-embsys/comet.git
 
 ### 5) Flash and configure the FCU and ESCs
 
-- Flash the official INAV 8.0.1 to the FCU, then apply the settings in the INAV CLI.
+- Flash the official INAV 8.0.1 to the FCU, then apply the settings through the INAV CLI.
 - Calibrate the accelerometer, magnetometer, and radio.
 - Use the ESC Configurator to flash the Bluejay firmware onto the ESCs and apply the parameters.
 - Verify the failsafes, motor order, and spin directions.
