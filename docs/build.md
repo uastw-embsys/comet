@@ -2,6 +2,9 @@
 
 # Build Manual
 
+<p><span style="color:red">General Notes: Searchable part overview images;</span></p>  
+
+
 At the beginning of the assembly process, gather all the necessary components and tools. The assembly process is divided into subgroups that come together to form the complete drone.
 <div align="center">
     <img src="./assets/images/one_drone_kit.jpg" width="60%">
@@ -62,7 +65,7 @@ To assemble a full hexacopter setup in a Y configuration, three motor blocks are
 
 ### MR30 Connector
 
-All brushless DC (BLDC) motors are connected to their respective electronic speed controllers (ESCs) via MR30 connectors, which are common in the drone community. First, attach the male MR30 connectors (MB-05, the ones with the pins inside the connector) to the BLDC motors (MB-01). Then, use a measuring tape or the supplied length ruler to cut the motors' cables to a length of around 5cm from the motor hub.
+All brushless DC (BLDC) motors are connected to their respective electronic speed controllers (ESCs) via MR30 connectors, which are common in the drone community. First, attach the male MR30 connectors (MB-05, the ones with the pins inside the connector) to the BLDC motors (MB-02). Then, use a measuring tape or the supplied length ruler to cut the motors' cables to a length of around 5cm from the motor hub.
 <div align="center">
     <img src="./assets/images/measure_motor_cable_length_annotated.png" width="60%">
     <p>Fig. 6. Cut each motor cable to a length of around 5cm.</p>
@@ -125,6 +128,14 @@ Store the remaining M3 x 25mm screws (MB-06), M3 washers (MB-07), and M3 self-lo
 
 ## ESC Stack
 
+<p><span style="color:red">TODO: Add different ESC connector pinouts of all that we use.</span></p>  
+<!-- We used the following 4-in-1 BLS ESCs: -->
+<!-- Skystars KO50A -->
+<!-- SpeedyBee F405 50A -->
+<!-- AxisFlying Argus ECO 60A -->
+<!-- Therefore, the ESC pinout needs to be addressed. -->
+<!-- If others are used people need to look at the pinouts! -->
+
 Electronic speed controllers (ESCs) are vital components of the drone because they control the BLDC motors and keep the drone airborne. These ESCs are accessible via a standardized IDC connector connected to the FCU, which supplies power to the FCU too. All parts for this subgroup are labeled with the prefix "ES-*" in the [bill of materials](./bill_of_materials.ods). The following steps illustrate how to assemble the COMET ESC stack. If the ESCs do not have rubber vibration dampers, install them first, placing the short end on the JST connector side!
 <div align="center">
     <img src="./assets/images/parts_esc_stacks_annotated.png" width="75%">
@@ -134,6 +145,8 @@ Electronic speed controllers (ESCs) are vital components of the drone because th
 [Back to the top &#8593;](#table-of-contents)
 
 ### ESC Connector Cable
+
+<p><span style="color:red">TODO: Point out that this is our config, be aware of differences for other ESCs.</span></p>  
 
 First, we need to manufacture the ESC cable that connects both ESCs through the JST SH connectors with the FCU. The ESC closer to the capacitor and mounting plate is called ESC #1, and the one below it is called ESC #2 (as indicated with the positioning in Fig. 15).
 <div align="center">
@@ -173,6 +186,7 @@ Cut the resulting cable to a length of approximately 6 cm, measured from the fro
 </div>
 
 The final step is to insert the cut end of the ribbon cable into the IDC connector, aligning the red wire with the arrow on the connector. Then, close the IDC connector and pay attention to the click.
+<p><span style="color:red">TODO: Add instructions on how to "crimp" this IDC connector with images.</span></p>  
 <div align="center">
     <img src="./assets/images/prepared_idc_connector.jpg" width="35%">
     <img src="./assets/images/finished_esc_connector.jpg" width="48.2%">
@@ -187,11 +201,14 @@ Do not connect the assembled ESC connector cable to the ESC yet. Store it for fi
 
 Begin assembling the ESC stack by cutting the silicone cables (ES-07) into 18 equal pieces, each 15cm long. Save the remaining cables as spares. Remove approximately 3mm of insulation from one side of each cable and apply solder to the exposed copper wire. Then, solder the motor cable strands to the pads of motors 1, 2, and 3 for both ESC #1 and ESC #2. Each ESC should now have nine motor cables attached to it. To make the final assembly easier, label the motor connector cable on ESC #1 from M1 to M3, and label the motor connector cable on ESC #2 from M4 to M6.
 <div align="center">
+    <p><span style="color:red">TODO: Add motor numbering to this image.</span></p>  
     <img src="./assets/images/motor_cables_soldered_to_esc.png" width="40%">
     <p>Fig. 21. Soldered motor cables to the pads of motors 1, 2, and 3 on one ESC.</p>
 </div>
 
 Use the M3 x 30mm (YF-11) screws from the later-assembled Y frame to properly align both ESCs and assemble the stack. Insert the screws through the rubber vibration dampers, ensuring that the JST connector side of each ESC faces down and the longer side of the dampers faces up. Secure the stack with the M3 self-locking nuts (ES-08). The top ESC is now referred to as #1, and the bottom one is referred to as #2.
+
+<p><span style="color:red">TODO: 25mm screws only used to align both ESCs.</span></p>  
 
 Use a spare XT60 power cable to connect the positive and negative power pads of both ESCs. Strip 15 mm of insulation from the cable to expose the wire, then apply solder. Solder the wire to the pads to connect both ESCs, then trim any excess wire. Note that these power pads take time to heat up and require a great deal of power!
 <div align="center">
@@ -426,6 +443,7 @@ Next, take M3 x 30 mm screws (YF-11) and screw them into the thread inserts of t
 
 The final step for this subgroup is to combine the mounting plates with the rotor arms (YF-02) to complete the Y frame of COMET. First, insert the remaining M3 x 25 mm screws with M3 washers through the rotor arm mounting holes in the top mounting plate, which holds the XT30 connectors, ESC connector, and quick release base. Then, attach the rotor arms to the top mounting plate using these M3 x 25mm screws. Finally, put the bottom mounting plate at the bottom of the stack. Thread the XT30 and ESC connector cables through the center hole of the bottom mounting plate toward the ESC stack that will soon be mounted.
 <div align="center">
+    <p><span style="color:red">TODO: Add bottom view of this stack.</span></p>  
     <img src="./assets/images/assembly_y_frame_rotor_arms.png" width="60%">
     <p>Fig. 50. Assembly steps for the rotor arms of the Y frame.</p>
 </div>

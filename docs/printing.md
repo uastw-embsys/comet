@@ -65,7 +65,7 @@ The list of all necessary 3D-prints to assemble COMET is below.
 ### Finished 3D-Prints
 
 <div align="center">
-    <p><span style="color:red">TODO: Update image & add color-coded parts.</span></p>  
+    <p><span style="color:red">TODO: Update image & add color-coded parts. All parts after 3D print from top with designators.</span></p>  
     <img src="./assets/images/finished_3D_print.jpg" width="60%">
     <p>Fig. P-4. The finished 3D-printed frame parts were produced using our research group's Prusa CORE One 3D printers. This build plate contains all the (functional) parts needed to assemble COMET.</p>
 </div>
@@ -160,6 +160,7 @@ Take a good look at the 3D-printed parts, e.g., check the general quality and lo
 
 In order to further process the 3D-printed parts, those supports must first be removed. The battery holder (BH-01) and the ESC connector mount (YF-04) will most likely have supports attached to them. Depending on your slicer settings, support structures may also be present on the RC receiver mount (RC-01) and the XT30 male connector mounts (YF-03). These supports can be broken off by applying a small amount of force with a nose plier.
 <div align="center">
+    <p><span style="color:red">TODO: Add image of parts after support removal.</span></p>  
     <img src="./assets/images/supports_to_remove.jpg" width="60%">
     <p>Fig. P-5. Here are some examples of where supports most likely need to be removed.</p>
 </div>
