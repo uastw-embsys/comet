@@ -146,7 +146,9 @@ Electronic speed controllers (ESCs) are vital components of the drone because th
 
 ### ESC Connector Cable
 
-<p><span style="color:red">TODO: Point out that this is our config, be aware of differences for other ESCs.</span></p>  
+<p><span style="color:red">TODO: Point out that this is our config, be aware of differences for other ESCs.</span></p>
+
+<p><span style="color:red">TODO: The long side of the standoffs need towards the mounting plate and JST connectors away from mounting plate. Best spacing for ESC connector cables.</span></p>  
 
 First, we need to manufacture the ESC cable that connects both ESCs through the JST SH connectors with the FCU. The ESC closer to the capacitor and mounting plate is called ESC #1, and the one below it is called ESC #2 (as indicated with the positioning in Fig. 15).
 <div align="center">
