@@ -17,6 +17,8 @@ Quick Links:
 
 ## Software
 
+<span style="color:red">TODO: Update this list and refer to Docker container for convenience.</span>
+
 The following is a list of the software used to create, 3D print, and operate COMET:
 - [FreeCAD 1.1.0](https://github.com/FreeCAD/FreeCAD/releases/tag/1.1.0) and [A2plus Workbench 0.4.68](https://github.com/kbwbe/A2plus)
 - [Python 3.12.3](https://www.python.org/downloads/release/python-3123/)

@@ -28,14 +28,14 @@ Based on our experience, we recommend the following materials:
 - PC-CF or ABS for the drone's frame (separate 3MF project files; see the naming convention above)
 - PETG for color-coded non-functional parts (separate 3MF project files; see the naming convention above)
 
-**Before printing:** Dry the filament you intend to use. Filaments such as PC are highly hygroscopic, which can result in print defects.
+**Before printing:** To avoid potential printing defects, make sure the filament you intend to use is dry.
 
 [Back to the top &#8593;](#table-of-contents)
 
 ### Recommended 3D-Print Settings
 
 Parts:
-- Orientation: each STL is oriented “as printed”
+- Orientation: each STL is oriented **as printed**
 
 Print Settings:
 - Nozzle: 0.4 mm
@@ -46,11 +46,11 @@ Print Settings:
 - Bottom Solid layers: 6
 - Infill: 20% Gyroid
 - Supports from build plate only: True
-- First layer * speed: 50%
+- First layer speeds: 50%
 
 Filament Settings:
 - Temperature: Slightly higher. This ensures proper layer adhesion.
-- Cooling: 0% for PC-CF/ABS (and just enough for bridging) and normal for PETG.
+- Cooling: 0% for PC-CF/ABS (and just enough for bridging) and standard for PETG.
 
 [Back to the top &#8593;](#table-of-contents)
 
@@ -67,7 +67,7 @@ The list of all necessary 3D-prints to assemble COMET is below.
 <div align="center">
     <p><span style="color:red">TODO: Update image & add color-coded parts. All parts after 3D print from top with designators.</span></p>  
     <img src="./assets/images/finished_3D_print.jpg" width="60%">
-    <p>Fig. P-4. The finished 3D-printed frame parts were produced using our research group's Prusa CORE One 3D printers. This build plate contains all the (functional) parts needed to assemble COMET.</p>
+    <p>Fig. P-4. The finished 3D-printed frame parts on our research group's Prusa CORE One 3D printers. This build plate contains all the (functional) parts needed to assemble COMET.</p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
@@ -90,6 +90,8 @@ Printer calibration is only effective to a certain extent, and some tolerances s
 ### 1) Print the Clearence Gauge
 
 First, find the outer and knurl diameters (`threaded_insert_outer_diameter` and `threaded_insert_knurl_diameter` in the parameters file) and minimum wall thickness (`threaded_insert_minimum_thickness` in the parameters file) of the M3 threaded inserts on the manufacturer's datasheet ([example](https://www.ruthex.de/cdn/shop/files/1Tabelle.PT05_eb2a30fa-5c34-46f8-b557-a6c432354560.jpg)), or measure them with calipers. Enter these values into lines L11, L12, and L14 in section "[1] Pre clearance gauge test values" of the part's parameter file [mechanical/source/part_parameters.yaml](./../mechanical/source/part_parameters.yaml).
+
+<span style="color:red">TODO: Have an ```update_project.sh```.</span>
 
 To proceed, apply the current part parameters and ensure that all exports and slicer projects are up to date by using the following commands in the cloned repository's root folder:
 
@@ -183,7 +185,7 @@ Support the 3d-printed part on a flat surface and align the threaded insert with
     <img src="./assets/images/threaded_inserts_landing_gear_mount.jpg" width="32%">
     <img src="./assets/images/application_landing_gear_mount.jpg" width="32%">
     <img src="./assets/images/prepared_landing_gear_mount.jpg" width="32%">
-    <p>Fig. P-6. The images show how to best align the threaded inserts for the landing gear mount (left), how to best apply the heat through the soldering iron (middle), and the finished preparation of the landing gear mount (right).</p>
+    <p>Fig. P-6. The images show how to best align the threaded inserts for the landing gear mount using the threaded inserts helper (left), how to best apply the heat through the soldering iron (middle), and the finished preparation of the landing gear mount (right).</p>
 </div>
 
 [Back to the top &#8593;](#table-of-contents)
@@ -215,6 +217,8 @@ Support the 3d-printed part on a flat surface and align the threaded insert with
 
 **Do** the steps shown in the figure below **only one time**. Even though two mounting plates were printed, the second one remains without threaded inserts. Use the included helper or clearance gauges' rotor arm test piece to lift up the mounting plate, as it is most likely thinner than the threaded inserts' length. This keeps the threaded inserts flush on top and stick out at the bottom.
 
+<span style="color:red">TODO: Take new images.</span>
+
 <div align="center">
     <img src="./assets/images/thread_inserts_mounting_plate.jpg" width="40%">
     <img src="./assets/images/prepared_mounting_plate.jpg" width="35%">
@@ -241,6 +245,8 @@ Support the 3d-printed part on a flat surface and align the threaded insert with
 **Repeat** the steps shown in the figure below **two times** for both quick release bases used.
 
 The quick release bases have threaded inserts that face the mounting plates turned upside down (Fig. P-11. left image shows that for the top two threaded inserts). The smooth side of the inserts ensures that the components are properly aligned when mounted them to the second mounting plate. As illustrated in the figure, insert them into the holes upside down (with the smooth part of the insert facing up) and push them in until the knurl is in the component. The smooth surface should stick out (Fig. P-11. right image).
+
+<span style="color:red">TODO: Take new images.</span>
 
 <div align="center">
     <img src="./assets/images/thread_inserts_quick_release.jpg" width="40%">
