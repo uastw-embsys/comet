@@ -13,8 +13,11 @@ At the beginning of the assembly process, gather all the necessary components an
 
 Additionally, the 3D print includes a ruler to measure the size of all the screws used in the build. Use it to ensure that you use the proper size screw for the task at hand.
 <div align="center">
-    <img src="./assets/images/screw_ruler_measuring_length.jpg" width="30%">
-    <img src="./assets/images/screw_ruler_measuring_diameter.jpg" width="40%">
+    <p><span style="color:red">TODO: Crop and color correct new images. Plus, change caption.</span></p>  
+    <!-- <img src="./assets/images/screw_ruler_measuring_length.jpg" width="30%">
+    <img src="./assets/images/screw_ruler_measuring_diameter.jpg" width="40%"> -->
+    <img src="./assets/images/PXL_20260911_133008182.jpg" width="30%">
+    <img src="./assets/images/PXL_20260911_133039133.jpg" width="40%">
     <p>Fig. 3. Here is an example of how to measure the length (left) and diameter (right) of a screw.</p>
 </div>
 Screw sizing aid
