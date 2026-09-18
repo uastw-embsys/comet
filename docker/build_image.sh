@@ -1,0 +1,1 @@
+docker build -t comet:v1.0.0 .

@@ -11,3 +11,6 @@ Private
 
 # LibreOffice locks
 .~lock.*#
+
+# Local container/app state
+.devcontainer-state/
