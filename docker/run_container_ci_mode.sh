@@ -1,4 +1,26 @@
-# No X11 and GPU; just to run the scripts
+#!/usr/bin/env bash
+# SPDX-License-Identifier: LGPL-3.0-or-later
+# SPDX-FileCopyrightText: 2026 Christoph Böhm <christoph.boehm@ieee.org>
+
+# No X11 and GPU
+# Run FreeCADCmd scripts inside the COMET Docker container.
+
+set -euo pipefail
+
+SCRIPTS=("$@")
+
+SCRIPT_COMMANDS=""
+if [ "${#SCRIPTS[@]}" -eq 0 ]; then
+    SCRIPT_COMMANDS+="FreeCADCmd"
+else
+    for script in "${SCRIPTS[@]}"; do
+        SCRIPT_COMMANDS+="FreeCADCmd -c /app/$script; "
+    done
+    SCRIPT_COMMANDS=${SCRIPT_COMMANDS::-2}
+fi
+
+echo "USED COMMAND: cd /app; $SCRIPT_COMMANDS"
+
 docker run -it --rm \
     -u $(id -u):$(id -g) \
     -v /etc/localtime:/etc/localtime:ro \
@@ -11,4 +33,4 @@ docker run -it --rm \
     -e MESA_LOADER_DRIVER_OVERRIDE=llvmpipe \
     -w /app \
     comet:v1.0.0 \
-    bash
+    bash -c "cd /app; $SCRIPT_COMMANDS"

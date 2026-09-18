@@ -136,5 +136,6 @@ def export_one(item):
 
 for item in PARTS:
     export_one(item)
-print("Export completed.")
+
+print("\n[Done] Export completed.")
 exit()

@@ -15,13 +15,13 @@ Naming of the 3MF projects inside the slicer project folders:
 - Non-functional colored parts: `color-coding-*.3mf`
 
 ## Table of Contents
-- [3D Printing](#3d-printing)
+- [Slicer Projects and Settings](#slicer-projects-and-settings)
 - [Clearance Gauge Calibration](#clearance-gauge-calibration)
+- [3D Printing](#3d-printing)
 - [Post-Processing](#post-processing)
 - [Next Step](#next-step)
 
-## 3D Printing
-
+## Slicer Projects and Settings
 To 3D-print the necessary parts for COMET, use the provided Slicer projects in the [mechanical/prints/](./../mechanical/prints/) folder. Alternatively, you can set up your own project using a different Slicer based on the recommendations below and the 3D files found in the [mechanical/exports/](./../mechanical/exports/).
 
 Based on our experience, we recommend the following materials:
@@ -54,24 +54,6 @@ Filament Settings:
 
 [Back to the top &#8593;](#table-of-contents)
 
-### Bill of Prints
-
-The list of all necessary 3D-prints to assemble COMET is below.
-
-<!-- TODO: Automatically populate this list from the BOM. -->
-
-[Back to the top &#8593;](#table-of-contents)
-
-### Finished 3D-Prints
-
-<div align="center">
-    <!-- TODO: Update image & add color-coded parts. All parts after 3D print from top with designators. -->
-    <img src="./assets/images/finished_3D_print.jpg" width="60%">
-    <p>Fig. P-1. The finished 3D-printed frame parts on our research group's Prusa CORE One 3D printers. This build plate contains all the (functional) parts needed to assemble COMET.</p>
-</div>
-
-[Back to the top &#8593;](#table-of-contents)
-
 ## Clearance Gauge Calibration
 
 To achieve precise hole clearances, flat first layers, and accurate dimensions, calibrate the printer with the intended filament. For more information, consult the manufacturer's manual or look into these helpful sources:
@@ -91,13 +73,10 @@ Printer calibration is only effective to a certain extent, and some tolerances s
 
 First, find the outer and knurl diameters (`threaded_insert_outer_diameter` and `threaded_insert_knurl_diameter` in the parameters file) and minimum wall thickness (`threaded_insert_minimum_thickness` in the parameters file) of the M3 threaded inserts on the manufacturer's datasheet ([example](https://www.ruthex.de/cdn/shop/files/1Tabelle.PT05_eb2a30fa-5c34-46f8-b557-a6c432354560.jpg)), or measure them with calipers. Enter these values into lines L11, L12, and L14 in section "[1] Pre clearance gauge test values" of the part's parameter file [mechanical/source/part_parameters.yaml](./../mechanical/source/part_parameters.yaml).
 
-<!-- TODO: Have an ```update_project.sh```. -->
-
 To proceed, apply the current part parameters and ensure that all exports and slicer projects are up to date by using the following commands in the cloned repository's root folder:
 
 ```bash
-freecad.cmd -c scripts/apply_parameters.py
-freecad.cmd -c scripts/export_source.py
+. update_project.sh
 ```
 
 Print the clearance gauge using either the 3MF project `clearance-gauge-*.3mf` from a supported slicer and printer setup (look into [mechanical/prints/](./../mechanical/prints/)), OR use the exported STL or STEP files (look into [mechanical/exports/](./../mechanical/exports/)) to set up your own project.
@@ -134,13 +113,33 @@ Use the resulting values and change lines L21, L23, L25, and L27 in section "[2]
 Again, apply the current part parameters and ensure that all exports and slicer projects are up to date by using the following commands in the cloned repository's root folder:
 
 ```bash
-freecad.cmd -c scripts/apply_parameters.py
-freecad.cmd -c scripts/export_source.py
+. update_project.sh
 ```
 
 Everything is now ready to print with proper clearances.
 
 [Back to the top &#8593;](#table-of-contents)
+
+## 3D Printing
+
+Now, use the updated Slicer projects in the [mechanical/prints/](./../mechanical/prints/) folder or your own project with a different Slicer to print all the parts needed to build COMET, which are listed below.
+
+### Bill of Prints
+
+<!-- TODO: Automatically populate this list from the BOM. -->
+
+[Back to the top &#8593;](#table-of-contents)
+
+### Finished 3D-Prints
+
+<div align="center">
+    <!-- TODO: Update image & add color-coded parts. All parts after 3D print from top with designators. -->
+    <img src="./assets/images/finished_3D_print.jpg" width="60%">
+    <p>Fig. P-1. The finished 3D-printed frame parts on our research group's Prusa CORE One 3D printers. This build plate contains all the (functional) parts needed to assemble COMET.</p>
+</div>
+
+[Back to the top &#8593;](#table-of-contents)
+
 
 ## Post-Processing
 

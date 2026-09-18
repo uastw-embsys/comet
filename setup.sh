@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: LGPL-3.0-or-later
 # SPDX-FileCopyrightText: 2026 Christoph Böhm <christoph.boehm@ieee.org>
 
-# Build the COMET Docker image.
+# Setup project's docker image which includes all tools needed.
 
-docker build -t comet:v1.0.0 .
+cd docker
+. build_image.sh
+cd ..

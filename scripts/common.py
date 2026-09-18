@@ -37,10 +37,6 @@ PARTS = [
         "fcstd": "mechanical/source/parts/motor_mount.FCStd",
         "label": "motor_mount",
     },
-    {
-        "fcstd": "mechanical/source/parts/capacitor_holder.FCStd",
-        "label": "capacitor_holder",
-    },
     {"fcstd": "mechanical/source/parts/rotor_arm.FCStd", "label": "rotor_arm"},
     {
         "fcstd": "mechanical/source/parts/landing_gear_mount.FCStd",
@@ -75,6 +71,7 @@ PARTS = [
         "label": "motor_mount_2mm_spacer",
     },
     {"fcstd": "mechanical/source/parts/handle.FCStd", "label": "handle"},
+    {"fcstd": "mechanical/source/parts/remote_label.FCStd", "label": "remote_label"},
     {
         "fcstd": "mechanical/source/parts/xt30_male_mount.FCStd",
         "label": "xt30_male_mount",

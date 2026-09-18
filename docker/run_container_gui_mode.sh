@@ -1,4 +1,10 @@
-# Host X11, software OpenGL; to edit files with a GUI
+#!/usr/bin/env bash
+# SPDX-License-Identifier: LGPL-3.0-or-later
+# SPDX-FileCopyrightText: 2026 Christoph Böhm <christoph.boehm@ieee.org>
+
+# Host X11, software OpenGL
+# Run FreeCAD with GUI inside the COMET Docker container.
+
 xhost +si:localuser:$(id -un)
 
 docker run -it --rm \

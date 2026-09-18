@@ -16,14 +16,23 @@ Quick Links:
   - Safety instructions: [docs/safety.md](./safety.md)
 
 ## Software
-
-<span style="color:red">TODO: Update this list and refer to Docker container for convenience.</span>
+ <!-- and [A2plus Workbench 0.4.68](https://github.com/kbwbe/A2plus) -->
 
 The following is a list of the software used to create, 3D print, and operate COMET:
-- [FreeCAD 1.1.0](https://github.com/FreeCAD/FreeCAD/releases/tag/1.1.0) and [A2plus Workbench 0.4.68](https://github.com/kbwbe/A2plus)
+- [FreeCAD 1.1.3](https://github.com/FreeCAD/FreeCAD/releases/tag/1.1.3)
 - [Python 3.12.3](https://www.python.org/downloads/release/python-3123/)
 - [PrusaSlicer 2.9.4](https://github.com/prusa3d/PrusaSlicer/releases/tag/version_2.9.4)
 - [INAV Configurator 8.0.1](https://github.com/iNavFlight/inav-configurator/releases/tag/8.0.1)
+
+### Docker Environment Setup
+
+For convenience, all software tools are contained in a [Docker](https://www.docker.com/)-based containerized environment. To set up the respective Docker image, use the following command in the root folder of this repository. All files related to this setup can be found in the [docker](./../docker) folder.
+
+```bash
+. setup.sh
+```
+
+After this command, the `update_project.sh` script can be used in the repository's root directory to update all project files according to the printing guide in [docs/printing.md](./printing.md).
 
 [Back to the top &#8593;](#documentation-index)
 
