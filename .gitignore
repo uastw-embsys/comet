@@ -14,3 +14,27 @@ Private
 
 # Local container/app state
 .devcontainer-state/
+
+# TODO: Add all built artifacts
+mechanical/exports/print/gcode/**/*
+mechanical/exports/print/paltes/**/*
+
+# # Generated print plate geometry
+# /generated/plates/
+
+# # Generated slicer projects
+# /generated/slicer-projects/
+
+# # Generated G-code
+# /generated/gcode/
+
+# # Temporary slicer files
+# *.bgcode.tmp
+# *.gcode.tmp
+# *.ufp
+# *.ufp.tmp
+
+# # Prusa/Orca/Bambu temporary autosaves/backups
+# *.3mf~
+# *.ini~
+# *.bak

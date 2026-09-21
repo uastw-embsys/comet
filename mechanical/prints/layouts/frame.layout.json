@@ -1,0 +1,43 @@
+{
+  "name": "frame-layout",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  
+  "outputs":
+  {
+    "3mf": "mechanical/exports/print/plates/frame.generic.3mf",
+    "combined_stl": "mechanical/exports/print/plates/positioned_stls/frame.combined.stl"
+  },
+
+  "parts":
+  [    
+    {
+      "name": "mounting_plate",
+      "file": "mechanical/exports/cad/stl/mounting_plate.stl",
+      "position": [0, 0, 0],
+      "rotation": [0, 0, 0],
+      "center_xy": true,
+      "drop_to_bed": true
+    },
+    {
+      "name": "motor_mount",
+      "file": "mechanical/exports/cad/stl/motor_mount.stl",
+      "center_xy": true,
+      "drop_to_bed": true,
+
+      "instances":
+      [
+        {
+          "name": "motor_mount_1",
+          "position": [-87.5, 72, 0],
+          "rotation": [0, 0, 180]
+        },
+        {
+          "name": "motor_mount_2",
+          "position": [50, 0, 0],
+          "rotation": [0, 0, 180]
+        }
+      ]
+    }
+  ]
+}

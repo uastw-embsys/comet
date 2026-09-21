@@ -1,0 +1,23 @@
+{
+  "name": "clearance-gauge-layout",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  
+  "outputs":
+  {
+    "3mf": "mechanical/exports/print/plates/clearance-gauge.generic.3mf",
+    "combined_stl": "mechanical/exports/print/plates/positioned_stls/clearance-gauge.combined.stl"
+  },
+
+  "parts":
+  [
+    {
+      "name": "clearance_gauge",
+      "file": "mechanical/exports/cad/stl/clearance_gauge.stl",
+      "position": [0, 0, 0],
+      "rotation": [0, 0, 0],
+      "center_xy": true,
+      "drop_to_bed": true
+    }
+  ]
+}

@@ -1,3 +1,33 @@
+# COMET print files
+
+This directory contains print layouts, slicer profiles, and optional slicer project files.
+
+## Directory overview
+
+- `layouts/` — slicer-neutral plate layouts used by automation.
+- `profiles/` — native slicer profiles by slicer/printer/material.
+- `projects/` — manually reviewed slicer project files for supported printers.
+- `targets/` — build target definitions connecting layouts and profiles.
+- `generated/` — generated intermediate files and G-code; not committed.
+
+## Supported targets
+
+| Target | Slicer | Printer | Material | Status |
+|---|---|---|---|---|
+| `prusaslicer-coreone-pla` | PrusaSlicer | Prusa CORE One | PLA | validated |
+| `prusaslicer-coreone-petg` | PrusaSlicer | Prusa CORE One | PETG | experimental |
+| `orcaslicer-bambu-p1s-pla` | OrcaSlicer | Bambu P1S | PLA | experimental |
+
+## Generate print plates
+
+```bash
+FreeCADCmd scripts/freecad/generate_plate.py mechanical/prints/layouts/frame.layout.json
+```
+
+
+-------------------------------------
+
+
 DESCRIBE NAMING CONVENTION OF 3D PRINT FILES
 
 # PrusaSlicer assets

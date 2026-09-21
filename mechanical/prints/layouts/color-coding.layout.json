@@ -1,0 +1,31 @@
+{
+  "name": "color-coding-layout",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  
+  "outputs":
+  {
+    "3mf": "mechanical/exports/print/plates/color-coding.generic.3mf",
+    "combined_stl": "mechanical/exports/print/plates/positioned_stls/color-coding.combined.stl"
+  },
+
+  "parts":
+  [
+    {
+      "name": "handle",
+      "file": "mechanical/exports/cad/stl/handle.stl",
+      "position": [0, 0, 0],
+      "rotation": [0, 0, 0],
+      "center_xy": true,
+      "drop_to_bed": true
+    },
+    {
+      "name": "remote_label",
+      "file": "mechanical/exports/cad/stl/remote_label.stl",
+      "position": [0, 0, 0],
+      "rotation": [0, 0, 0],
+      "center_xy": true,
+      "drop_to_bed": true
+    }
+  ]
+}

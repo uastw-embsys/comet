@@ -5,7 +5,7 @@
 # No X11 and GPU
 # Run FreeCADCmd scripts inside the COMET Docker container.
 
-set -euo pipefail
+# set -euo pipefail
 
 SCRIPTS=("$@")
 

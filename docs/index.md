@@ -56,7 +56,7 @@ The following is a list of the tools needed to build COMET:
 
 ## Quick Start
 
-The following steps will guide you through the process of building your very own COMET drone.
+These steps will guide you through the process of building your very own COMET drone.
 
 ### 1) Get the files
 
@@ -68,11 +68,13 @@ git clone https://github.com/uastw-embsys/comet.git
 
 ### 2) Order the non-printable parts
 
+<!-- TODO: Update this part after changes to BoM -->
 - Refer to the "bill of materials" sheet in [`docs/bill_of_materials.ods`](./bill_of_materials.ods). It contains a detailed list of parts grouped by subassemblies from the build manual.
 - Use the "order list" sheet for recommended parts, including filament spools for multiple drones. Don't order filament spools if they're already available.
 
 ### 3) 3D print the frame
 
+<!-- TODO: Might need update if we change the print workflow -->
 - Make sure the 3D printer is properly calibrated (e.g., [elephant footing](https://store.anycubic.com/blogs/3d-printing-guides/how-to-fine-tune-z-offset) and [over- or under-extrusion](https://help.prusa3d.com/article/.extrusion-multiplier-calibration_2257)).
 - Print the gauge with the frame part filament and update parts based on clearances.
 - 3D print the frame and color-coded parts:

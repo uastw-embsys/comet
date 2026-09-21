@@ -1,0 +1,50 @@
+{
+  "name": "targets",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+
+  "plates":
+  {
+    "frame":
+    {
+      "3mf": "mechanical/exports/print/plates/frame.generic.3mf",
+      "positioned_stl_dir": "mechanical/exports/print/plates/positioned_stls/frame"
+    },
+
+    "color-coding":
+    {
+      "3mf": "mechanical/exports/print/plates/color-coding.generic.3mf",
+      "positioned_stl_dir": "mechanical/exports/print/plates/positioned_stls/color-coding"
+    },
+
+    "clearance-gauge":
+    {
+      "3mf": "mechanical/exports/print/plates/clearance-gauge.generic.3mf",
+      "positioned_stl_dir": "mechanical/exports/print/plates/positioned_stls/clearance-gauge"
+    }
+  },
+
+  "targets":
+  {
+    "prusaslicer-coreone-pccf":
+    {
+      "slicer": "prusaslicer",
+      "executable": "prusa-slicer",
+
+      "printer": "coreone",
+      "material": "pccf",
+
+      "profile": "mechanical/prints/profiles/prusaslicer/coreone-0.4-pccf-0.20.ini",
+
+      "input_type": "3mf",
+
+      "output_dir": "mechanical/exports/print/gcode/coreone",
+
+      "options":
+      {
+        "dont_arrange": true,
+        "export_project": false
+      }
+    }
+  }
+}
