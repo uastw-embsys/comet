@@ -4,4 +4,6 @@
 
 # Build the COMET Docker image.
 
-docker build -t comet:v1.0.0 .
+DOCKER_BUILDKIT=1 docker build -t comet:v1.0.0 .
+
+# DOCKER_BUILDKIT=1 docker build --progress=plain -t comet:v1.0.0 .

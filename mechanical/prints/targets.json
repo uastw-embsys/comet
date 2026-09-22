@@ -8,19 +8,19 @@
     "frame":
     {
       "3mf": "mechanical/exports/print/plates/frame.generic.3mf",
-      "positioned_stl_dir": "mechanical/exports/print/plates/positioned_stls/frame"
+      "combined_stl": "mechanical/exports/print/plates/positioned_stls/frame.combined.stl"
     },
 
     "color-coding":
     {
       "3mf": "mechanical/exports/print/plates/color-coding.generic.3mf",
-      "positioned_stl_dir": "mechanical/exports/print/plates/positioned_stls/color-coding"
+      "combined_stl": "mechanical/exports/print/plates/positioned_stls/color-coding.combined.stl"
     },
 
     "clearance-gauge":
     {
       "3mf": "mechanical/exports/print/plates/clearance-gauge.generic.3mf",
-      "positioned_stl_dir": "mechanical/exports/print/plates/positioned_stls/clearance-gauge"
+      "combined_stl": "mechanical/exports/print/plates/positioned_stls/clearance-gauge.combined.stl"
     }
   },
 
