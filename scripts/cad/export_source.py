@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 # SPDX-License-Identifier: LGPL-3.0-or-later
 # SPDX-FileCopyrightText: 2026 Christoph Böhm <christoph.boehm@ieee.org>
 """
@@ -14,20 +13,23 @@ Usage (from repository root):
     # or, depending on your install:
     # FreeCADCmd -c scripts/export_source.py
     # FreeCAD -c scripts/export_source.py  (GUI binary, still console mode)
-
-License: LGPL-3.0-or-later
-See the LICENSE file (or https://www.gnu.org/licenses/lgpl-3.0.txt).
 """
 
 __version__ = "1.0.0"
 __author__ = "Christoph Böhm"
-__contact__ = "christoph.boehm@ieee.org"
+__email__ = "christoph.boehm@ieee.org"
 __copyright__ = "2026 Christoph Böhm"
 __license__ = "LGPL-3.0-or-later"
 
 # Import all relevant modules
 import os
 import sys
+
+try:
+    sys.stdout.reconfigure(line_buffering=True)
+    sys.stderr.reconfigure(line_buffering=True)
+except AttributeError:
+    pass
 
 # Try to load FreeCAD API
 try:
@@ -99,6 +101,8 @@ def export_one(item):
             print(f"Export STEP: {out_step}")
             # Import.export wants document objects
             Import.export([obj], out_step)
+            # Set proper rights
+            os.chmod(out_step, 0o664)
 
         # Prepare meshing parameters (convert degrees → radians)
         lin = float(mesh.get("linear", 0.1))  # 0.05mm - 0.15mm
@@ -121,6 +125,8 @@ def export_one(item):
             doc.recompute()
             try:
                 Mesh.export([tmp_mesh], out_stl)
+                # Set proper rights
+                os.chmod(out_stl, 0o664)
             finally:
                 # cleanup temp mesh object
                 try:
@@ -140,4 +146,3 @@ for item in PARTS:
     export_one(item)
 
 print("\n[Done] Export completed.")
-exit()

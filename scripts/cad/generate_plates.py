@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 # SPDX-License-Identifier: LGPL-3.0-or-later
 # SPDX-FileCopyrightText: 2026 Christoph Böhm <christoph.boehm@ieee.org>
 """
@@ -26,7 +25,7 @@ Recommended repo flow:
 
 __version__ = "1.0.0"
 __author__ = "Christoph Böhm"
-__contact__ = "christoph.boehm@ieee.org"
+__email__ = "christoph.boehm@ieee.org"
 __copyright__ = "2026 Christoph Böhm"
 __license__ = "LGPL-3.0-or-later"
 
@@ -41,6 +40,11 @@ from pathlib import Path
 import FreeCAD as App
 import Mesh
 
+try:
+    sys.stdout.reconfigure(line_buffering=True)
+    sys.stderr.reconfigure(line_buffering=True)
+except AttributeError:
+    pass
 # ---------------------------------------------------------------------------
 # Logging
 # ---------------------------------------------------------------------------
@@ -969,6 +973,8 @@ for layout_arg in args.layouts:
         log("")
         log(f"Writing combined STL: {combined_stl_path}")
         export_combined_stl(placed_meshes, combined_stl_path)
+        # Set proper rights
+        os.chmod(combined_stl_path, 0o664)
 
     if positioned_3mf_path and not args.no_3mf:
         log("")
@@ -982,6 +988,9 @@ for layout_arg in args.layouts:
             ]
 
             patch_3mf_object_names(positioned_3mf_path, object_names)
+
+            # Set proper rights
+            os.chmod(positioned_3mf_path, 0o664)
 
         except Exception as exc:
             message = (
@@ -998,5 +1007,3 @@ for layout_arg in args.layouts:
 
 log("")
 log("Done.")
-
-exit()

@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 # SPDX-License-Identifier: LGPL-3.0-or-later
 # SPDX-FileCopyrightText: 2026 Christoph Böhm <christoph.boehm@ieee.org>
 """
@@ -14,14 +13,11 @@ Usage (from repository root):
     # or, depending on your install:
     # FreeCADCmd -c scripts/apply_parameters.py
     # FreeCAD -c scripts/apply_parameters.py  (GUI binary, still console mode)
-
-License: LGPL-3.0-or-later
-See the LICENSE file (or https://www.gnu.org/licenses/lgpl-3.0.txt).
 """
 
 __version__ = "1.0.0"
 __author__ = "Christoph Böhm"
-__contact__ = "christoph.boehm@ieee.org"
+__email__ = "christoph.boehm@ieee.org"
 __copyright__ = "2026 Christoph Böhm"
 __license__ = "LGPL-3.0-or-later"
 
@@ -31,6 +27,12 @@ import sys
 import zipfile
 import tempfile
 import shutil
+
+try:
+    sys.stdout.reconfigure(line_buffering=True)
+    sys.stderr.reconfigure(line_buffering=True)
+except AttributeError:
+    pass
 
 # Try to load FreeCAD API
 try:
@@ -244,5 +246,7 @@ for item in PARTS:
     print("GUI settings restored:", ok)
     print("GUI settings verified:", verify_gui_xml(fcstd, original_gui))
 
+    # 6) Restore rights
+    os.chmod(fcstd, 0o664)
+
 print("\n[Done] Parameters applied.")
-exit()

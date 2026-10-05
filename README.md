@@ -12,7 +12,7 @@
 
 ## Description
 
-COMET is an open-source, cost-efficient Y6 hexacopter platform designed for education and research in embedded and cyber-physical systems. It features a fully 3D-printed, modular Y-frame with coaxial brushless DC motors and propellers that provide redundancy in propulsion. COMET also has a standardized motor-controller connector that allows for the easy integration of your preferred flight controller. This repository includes a containerized development environment, CAD sources, printable STL files, 3MF slicer projects, a bill of materials, a comprehensive build manual, and a ready-to-fly INAV configuration to ensure easy reproducibility.
+COMET is an open-source, cost-efficient Y6 hexacopter platform designed for education and research in embedded and cyber-physical systems. It features a fully 3D-printed, modular Y-frame with coaxial brushless DC motors and propellers that provide redundancy in propulsion. COMET also has a standardized motor-controller connector that allows for the easy integration of your preferred flight controller. This repository includes a containerized toolchain, CAD sources, printable STL files, 3MF build plate projects, a bill of materials, a comprehensive build manual, and a ready-to-fly INAV configuration to ensure easy reproducibility.
 
 Key specifications:
 - Build it for less than $600 in total
@@ -58,64 +58,10 @@ In this repository, "mechanical" refers to printed parts, mechanical components,
 ```
 /
 ├── LICENSES/                            # Contains all licenses that are used
-├── docs/
-│   ├── assets/
-│   │   ├── fonts/                       # Fonts used in the project
-│   │   ├── images/                      # Pictures used in the project
-│   │   └── renders/                     # Exported screenshots and animations
-│   ├── bill_of_materials.ods            # Detailed list of all parts needed
-│   ├── build.md                         # Instructions for building COMET hardware
-│   ├── config.md                        # Instructions for configuring COMET electronics
-│   ├── index.md                         # Documentation landing page
-│   ├── printing.md                      # Instructions for printing COMET hardware
-│   └── safety.md                        # General drone/COMET safety instructions
-├── electronics/
-│   ├── esc/                             # Supported ESC configs (e.g., Bluejay)
-│   │   └── bluejay/
-│   │       └── configs/
-│   │           └── <VERSION>/
-│   │               ├── <TARGET>/        # YAML file documents all parameter values
-│   │               │   ├── esc-configurator-*.png
-│   │               │   └── parameters-*.yaml
-│   │               └── README.md        # Description of how to configure ESCs
-│   ├── fcu/                             # Supported FCU configs (e.g., INAV)
-│   │   └── inav/
-│   │       └── configs/
-│   │           └── <VERSION>/
-│   │               ├── <TARGET>/
-│   │               │   └── diff-*.txt   # Contains all setting changes
-│   │               └── README.md        # Description of how to configure the FCU
-│   └── wiring/
-│       └── wiring-diagram.svg           # Shows how components are connected and interfaced
-├── mechanical/
-│   ├── exports/                         # Generated artifacts (STEP and STL, do not edit)
-│   ├── prints/                          # Supported slicer configs (e.g., PrusaSlicer)
-│   │   ├── prusaslicer/
-│   │   │   └── <PRINTER>/               # Printer-specific (e.g., COREONE) project files
-│   │   │       └── <MATERIAL>/          # At least one folder named after the material(s) used
-│   │   │       │   ├── clearance-gauge-*.3mf
-│   │   │       │   ├── color-coding-*.3mf
-│   │   │       │   └── frame-*.3mf
-│   │   │       └── prusaslicer-bundle-Prusa<PRINTER>.ini
-│   │   └── README.md
-│   └── source/
-│       ├── assemblies/                  # FreeCAD assemblies (A2plus workbench)
-│       ├── part_parameters.yaml         # FreeCAD YAML parameter file
-│       ├── parts/                       # FreeCAD part files (one Body per part)
-│       ├── tools/
-│       │   ├── clearance_gauge.FCStd    # Test part to calibrate for printer and filament
-│       │   ├── length_ruler.FCStd
-│       │   └── threaded_inserts_helper.FCStd
-│       └── README.md                    # Description to help navigate the "source"
-├── scripts/
-│   ├── apply_parameters.py      # Apply part settings to FreeCAD parts
-│   ├── common_fc.py             # Commonly used functions and variables
-│   └── export_source.py         # FreeCAD export script
-└── README.md
 ```
 
 ### Source vs. Exports
-The "source" (preferred form for modification) is under `mechanical/source/`. Generated artifacts (STL/STEP and 3MF) are under `mechanical/exports/` and `mechanical/prints/` after the use of `scripts/export_source.py`.
+The preferred form for modification, the "source," is under `mechanical/source/`, while the generated artifacts (STL, STEP, and 3MF) are under `mechanical/exports/`.
 
 [Back to the top &#8593;](#comet---cost-efficient-open-source-multicopter-for-embedded-systems-teaching)
 
@@ -139,7 +85,6 @@ All releases use a semantic versioning scheme: MAJOR.MINOR.PATCH (e.g., v1.0.0).
 
 Each release includes:
   - STEP and STL files for all printed parts
-  - 3MF and INI project files for the slicers and 3D printers currently supported
   - PDF of the bill of materials
   - PDF of the documentation (e.g., build manual)
   - INAV and Bluejay configuration files for the FCUs and ESCs that are currently supported
@@ -166,7 +111,7 @@ By contributing, you agree that your contributions are provided under the same l
 
 ## Cite This Work
 
-If you use or adapt the device for any academic or industrial purpose, especially if you publish it, please cite this repository and the relevant prior work.
+If you use or adapt this project for any academic or industrial purpose, especially if you publish it, please cite this repository and the relevant prior work.
 
 ### BibTeX repository
 ```bibtex
@@ -240,7 +185,6 @@ Corresponding author: **Christoph Böhm** - christoph.boehm@ieee.org
   - INAV flight software and INAV Configurator
   - Slicers used for supplied profiles (e.g., PrusaSlicer)
   - Icons and fonts used in this project
-<!-- - This work was partially supported by <Grant/Company> (Grant no. XXX) -->
 
 [Back to the top &#8593;](#comet---cost-efficient-open-source-multicopter-for-embedded-systems-teaching)
 

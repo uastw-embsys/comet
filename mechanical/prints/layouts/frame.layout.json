@@ -1,7 +1,8 @@
 {
   "name": "frame-layout",
   "version": "1.0.0",
-  "license": "CC0-1.0",
+  "SPDX-License-Identifier": "CC0-1.0",
+  "SPDX-FileCopyrightText": "2026 Christoph Böhm",
   
   "outputs":
   {
@@ -10,14 +11,66 @@
   },
 
   "parts":
-  [    
+  [
     {
-      "name": "mounting_plate",
-      "file": "mechanical/exports/cad/stl/mounting_plate.stl",
-      "position": [0, 0, 0],
+      "name": "threaded_inserts_helper",
+      "file": "mechanical/exports/cad/stl/threaded_inserts_helper.stl",
+      "position": [32, 41, 0],
+      "rotation": [0, 0, -50],
+      "center_xy": true,
+      "drop_to_bed": true
+    },
+    {
+      "name": "length_ruler",
+      "file": "mechanical/exports/cad/stl/length_ruler.stl",
+      "position": [235, 177, 0],
+      "rotation": [0, 0, -90],
+      "center_xy": true,
+      "drop_to_bed": true
+    },  
+    {
+      "name": "battery_holder",
+      "file": "mechanical/exports/cad/stl/battery_holder.stl",
+      "position": [160.5, 178.5, 0],
+      "rotation": [0, 0, 180],
+      "center_xy": true,
+      "drop_to_bed": true
+    },
+    {
+      "name": "rc_receiver_mount",
+      "file": "mechanical/exports/cad/stl/rc_receiver_mount.stl",
+      "position": [174, 189, 0],
+      "rotation": [0, 0, -90],
+      "center_xy": true,
+      "drop_to_bed": true
+    },
+    {
+      "name": "esc_connector_mount",
+      "file": "mechanical/exports/cad/stl/esc_connector_mount.stl",
+      "position": [49, 204, 0],
       "rotation": [0, 0, 0],
       "center_xy": true,
       "drop_to_bed": true
+    },
+    {
+      "name": "mounting_plate",
+      "file": "mechanical/exports/cad/stl/mounting_plate.stl",
+      "center_xy": true,
+      "drop_to_bed": true,
+
+      "instances":
+      [
+        {
+          "name": "mounting_plate_1",
+          "position": [110, 134, 0],
+          "rotation": [0, 0, 180]
+        },
+        {
+          "name": "mounting_plate_2",
+          "position": [140, 86, 0],
+          "rotation": [0, 0, 0]
+        }
+      ]
     },
     {
       "name": "motor_mount",
@@ -29,13 +82,218 @@
       [
         {
           "name": "motor_mount_1",
-          "position": [-87.5, 72, 0],
+          "position": [156, 37, 0],
           "rotation": [0, 0, 180]
         },
         {
           "name": "motor_mount_2",
-          "position": [50, 0, 0],
+          "position": [86, 70.5, 0],
           "rotation": [0, 0, 180]
+        },
+        {
+          "name": "motor_mount_3",
+          "position": [96, 201.5, 0],
+          "rotation": [0, 0, 180]
+        },
+        {
+          "name": "motor_mount_4",
+          "position": [115.5, 37, 0],
+          "rotation": [0, 0, 0]
+        },
+        {
+          "name": "motor_mount_5",
+          "position": [100, 182, 0],
+          "rotation": [0, 0, 0]
+        },
+        {
+          "name": "motor_mount_6",
+          "position": [75, 37, 0],
+          "rotation": [0, 0, 180]
+        }
+      ]
+    },
+    {
+      "name": "motor_mount_1mm_spacer",
+      "file": "mechanical/exports/cad/stl/motor_mount_1mm_spacer.stl",
+      "center_xy": true,
+      "drop_to_bed": true,
+
+      "instances":
+      [
+        {
+          "name": "motor_mount_1mm_spacer_1",
+          "position": [13, 148, 0],
+          "rotation": [0, 0, 45]
+        },
+        {
+          "name": "motor_mount_1mm_spacer_2",
+          "position": [13, 133, 0],
+          "rotation": [0, 0, 45]
+        },
+        {
+          "name": "motor_mount_1mm_spacer_3",
+          "position": [13, 118, 0],
+          "rotation": [0, 0, 45]
+        },
+        {
+          "name": "motor_mount_1mm_spacer_4",
+          "position": [13, 103, 0],
+          "rotation": [0, 0, 45]
+        },
+        {
+          "name": "motor_mount_1mm_spacer_5",
+          "position": [13, 88, 0],
+          "rotation": [0, 0, 45]
+        },
+        {
+          "name": "motor_mount_1mm_spacer_6",
+          "position": [13, 73, 0],
+          "rotation": [0, 0, 45]
+        }
+      ]
+    },
+    {
+      "name": "motor_mount_2mm_spacer",
+      "file": "mechanical/exports/cad/stl/motor_mount_2mm_spacer.stl",
+      "center_xy": true,
+      "drop_to_bed": true,
+
+      "instances":
+      [
+        {
+          "name": "motor_mount_2mm_spacer_1",
+          "position": [237, 138, 0],
+          "rotation": [0, 0, 45]
+        },
+        {
+          "name": "motor_mount_2mm_spacer_2",
+          "position": [237, 123, 0],
+          "rotation": [0, 0, 45]
+        },
+        {
+          "name": "motor_mount_2mm_spacer_3",
+          "position": [237, 108, 0],
+          "rotation": [0, 0, 45]
+        },
+        {
+          "name": "motor_mount_2mm_spacer_4",
+          "position": [237, 93, 0],
+          "rotation": [0, 0, 45]
+        },
+        {
+          "name": "motor_mount_2mm_spacer_5",
+          "position": [237, 78, 0],
+          "rotation": [0, 0, 45]
+        },
+        {
+          "name": "motor_mount_2mm_spacer_6",
+          "position": [237, 63, 0],
+          "rotation": [0, 0, 45]
+        }
+      ]
+    },
+    {
+      "name": "rotor_arm",
+      "file": "mechanical/exports/cad/stl/rotor_arm.stl",
+      "center_xy": true,
+      "drop_to_bed": true,
+
+      "instances":
+      [
+        {
+          "name": "rotor_arm_1",
+          "position": [26, 129, 0],
+          "rotation": [0, 0, 0]
+        },
+        {
+          "name": "rotor_arm_2",
+          "position": [36.5, 129, 0],
+          "rotation": [0, 0, 0]
+        },
+        {
+          "name": "rotor_arm_3",
+          "position": [47, 129, 0],
+          "rotation": [0, 0, 0]
+        },
+        {
+          "name": "rotor_arm_4",
+          "position": [203, 91, 0],
+          "rotation": [0, 0, 0]
+        },
+        {
+          "name": "rotor_arm_5",
+          "position": [213.5, 91, 0],
+          "rotation": [0, 0, 0]
+        },
+        {
+          "name": "rotor_arm_6",
+          "position": [224, 91, 0],
+          "rotation": [0, 0, 0]
+        }
+      ]
+    },
+    {
+      "name": "landing_gear_mount",
+      "file": "mechanical/exports/cad/stl/landing_gear_mount.stl",
+      "center_xy": true,
+      "drop_to_bed": true,
+
+      "instances":
+      [
+        {
+          "name": "landing_gear_mount_1",
+          "position": [101.5, 54.5, 0],
+          "rotation": [0, 0, -90]
+        },
+        {
+          "name": "landing_gear_mount_2",
+          "position": [205, 182, 0],
+          "rotation": [0, 0, 0]
+        },
+        {
+          "name": "landing_gear_mount_3",
+          "position": [219.5, 182, 0],
+          "rotation": [0, 0, 0]
+        }
+      ]
+    },
+    {
+      "name": "xt30_male_mount",
+      "file": "mechanical/exports/cad/stl/xt30_male_mount.stl",
+      "center_xy": true,
+      "drop_to_bed": true,
+
+      "instances":
+      [
+        {
+          "name": "xt30_male_mount_1",
+          "position": [93.5, 129.2, 0],
+          "rotation": [0, 0, -90]
+        },
+        {
+          "name": "xt30_male_mount_2",
+          "position": [156.5, 90.8, 0],
+          "rotation": [0, 0, 90]
+        }
+      ]
+    },
+    {
+      "name": "quick_release_base",
+      "file": "mechanical/exports/cad/stl/quick_release_base.stl",
+      "center_xy": true,
+      "drop_to_bed": true,
+
+      "instances":
+      [
+        {
+          "name": "quick_release_base_1",
+          "position": [96, 139.5, 0],
+          "rotation": [0, 0, 90]
+        },
+        {
+          "name": "quick_release_base_2",
+          "position": [154, 80.5, 0],
+          "rotation": [0, 0, -90]
         }
       ]
     }

@@ -1,40 +1,109 @@
-# Freecad temporary files
-*.pyc
-*.fcstd1
-*.FCStd1
-*.fcstd2
-*.FCStd2
-*.FCBak
-Private
-*.bak
-.DS_Store
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
 
-# LibreOffice locks
+# Local-only environment/secrets, if ever used outside Docker
+.venv/
+.env
+.env.*
+!.env.example
+
+
+# -----------------------------------------------------------------------------
+# FreeCAD
+# Keep real source files like *.FCStd tracked.
+# Ignore FreeCAD backups, autosaves, locks, and temp files.
+# -----------------------------------------------------------------------------
+*.FCBak
+*.fcbak
+
+*.FCStd[0-9]*
+*.fcstd[0-9]*
+
+*.FCStd#*
+*.fcstd#*
+
+*.FCStd.lock
+*.fcstd.lock
+
+*.bak
+
+
+# -----------------------------------------------------------------------------
+# Mechanical generated outputs
+# If you intentionally version release exports, remove the relevant lines below.
+# -----------------------------------------------------------------------------
+
+# # CAD exports generated from mechanical/source
+# mechanical/exports/cad/step/*.step
+# mechanical/exports/cad/stl/*.stl
+
+# # Generated/positioned print plates
+# mechanical/exports/print/plates/*.3mf
+# mechanical/exports/print/plates/positioned_stls/*.stl
+
+# Machine-specific slicer output
+mechanical/exports/print/gcodes/**/*.gcode
+mechanical/exports/print/gcodes/**/*.bgcode
+
+# PrusaSlicer temporary slicer/export files
+*.gcode.tmp
+*.bgcode.tmp
+*.3mf~
+*.ini~
+
+
+# -----------------------------------------------------------------------------
+# LibreOffice
+# Keep real documents like docs/bill_of_materials.ods tracked.
+# Ignore lock files.
+# -----------------------------------------------------------------------------
 .~lock.*#
 
+
+# -----------------------------------------------------------------------------
+# Documentation / static-site build output
+# -----------------------------------------------------------------------------
+docs/_site/
+docs/.jekyll-cache/
+docs/.sass-cache/
+.jekyll-cache/
+.sass-cache/
+
+
+# -----------------------------------------------------------------------------
+# OS files
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+
+# -----------------------------------------------------------------------------
+# Editors / IDEs
+# -----------------------------------------------------------------------------
+.vscode/
+*.code-workspace
+
+# Temporary editor files
+*.swp
+*.swo
+*~
+
+
+# -----------------------------------------------------------------------------
 # Local container/app state
-.devcontainer-state/
+# -----------------------------------------------------------------------------
+.devcontainer-state
 
-# TODO: Add all built artifacts
-mechanical/exports/print/gcode/**/*
-mechanical/exports/print/paltes/**/*
 
-# # Generated print plate geometry
-# /generated/plates/
-
-# # Generated slicer projects
-# /generated/slicer-projects/
-
-# # Generated G-code
-# /generated/gcode/
-
-# # Temporary slicer files
-# *.bgcode.tmp
-# *.gcode.tmp
-# *.ufp
-# *.ufp.tmp
-
-# # Prusa/Orca/Bambu temporary autosaves/backups
-# *.3mf~
-# *.ini~
-# *.bak
+# -----------------------------------------------------------------------------
+# Generic local build/temp directories
+# -----------------------------------------------------------------------------
+tmp/
+temp/
+build/
+dist/
+.cache/

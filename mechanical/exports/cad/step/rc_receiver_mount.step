@@ -1,7 +1,7 @@
 ISO-10303-21;
 HEADER;
 FILE_DESCRIPTION(('FreeCAD Model'),'2;1');
-FILE_NAME('Open CASCADE Shape Model','2026-09-21T23:50:25',('Author'),(
+FILE_NAME('Open CASCADE Shape Model','2026-10-05T17:30:30',('Author'),(
     ''),'Open CASCADE STEP processor 7.6','FreeCAD','Unknown');
 FILE_SCHEMA(('AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }'));
 ENDSEC;
@@ -204,7 +204,7 @@ DATA;
 #188 = VERTEX_POINT('',#189);
 #189 = CARTESIAN_POINT('',(0.,-1.7,1.5));
 #190 = LINE('',#191,#192);
-#191 = CARTESIAN_POINT('',(-3.E-16,-1.7,1.5));
+#191 = CARTESIAN_POINT('',(-3.1E-16,-1.7,1.5));
 #192 = VECTOR('',#193,1.);
 #193 = DIRECTION('',(1.,0.,0.));
 #194 = ORIENTED_EDGE('',*,*,#195,.F.);
@@ -390,7 +390,7 @@ DATA;
 #373 = VERTEX_POINT('',#374);
 #374 = CARTESIAN_POINT('',(0.,-1.7,0.));
 #375 = LINE('',#376,#377);
-#376 = CARTESIAN_POINT('',(-1.5E-16,-1.7,0.));
+#376 = CARTESIAN_POINT('',(-1.6E-16,-1.7,0.));
 #377 = VECTOR('',#378,1.);
 #378 = DIRECTION('',(1.,0.,0.));
 #379 = ORIENTED_EDGE('',*,*,#380,.F.);
@@ -1270,7 +1270,7 @@ DATA;
 #1248 = ORIENTED_EDGE('',*,*,#279,.F.);
 #1249 = PLANE('',#1250);
 #1250 = AXIS2_PLACEMENT_3D('',#1251,#1252,#1253);
-#1251 = CARTESIAN_POINT('',(-3.E-16,-1.7,1.5));
+#1251 = CARTESIAN_POINT('',(-3.1E-16,-1.7,1.5));
 #1252 = DIRECTION('',(0.,-1.,0.));
 #1253 = DIRECTION('',(1.,0.,0.));
 #1254 = ADVANCED_FACE('',(#1255),#1266,.F.);

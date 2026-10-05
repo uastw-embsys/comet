@@ -1,20 +1,13 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 # SPDX-License-Identifier: LGPL-3.0-or-later
 # SPDX-FileCopyrightText: 2026 Christoph Böhm <christoph.boehm@ieee.org>
 """
 Common code snippets and variables across scripts.
-
-Usage:
-    freecad.cmd -c scripts/apply_parameters.py
-
-License: LGPL-3.0-or-later
-See the LICENSE file (or https://www.gnu.org/licenses/lgpl-3.0.txt).
 """
 
 __version__ = "1.0.0"
 __author__ = "Christoph Böhm"
-__contact__ = "christoph.boehm@ieee.org"
+__email__ = "christoph.boehm@ieee.org"
 __copyright__ = "2026 Christoph Böhm"
 __license__ = "LGPL-3.0-or-later"
 

@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 # SPDX-License-Identifier: LGPL-3.0-or-later
 # SPDX-FileCopyrightText: 2026 Christoph Böhm <christoph.boehm@ieee.org>
 """
@@ -8,7 +7,7 @@ DOCUMENTATION
 
 __version__ = "1.0.0"
 __author__ = "Christoph Böhm"
-__contact__ = "christoph.boehm@ieee.org"
+__email__ = "christoph.boehm@ieee.org"
 __copyright__ = "2026 Christoph Böhm"
 __license__ = "LGPL-3.0-or-later"
 
@@ -17,6 +16,8 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+
+from slicer_backends import BACKENDS
 
 
 def run(cmd):
@@ -36,235 +37,151 @@ def resolve(path, repo_root):
     return repo_root / p
 
 
-def get_plate_input(plate_spec, input_type, repo_root):
+def get_plate_input(data, plate_name, input_type, repo_root):
+    paths = data["paths"]
+
     if input_type == "3mf":
-        return resolve(plate_spec["3mf"], repo_root)
+        template = paths["plate_3mf_template"]
+    elif input_type == "combined_stl":
+        template = paths["combined_stl_template"]
+    else:
+        raise RuntimeError(f"Unsupported input_type: {input_type}")
 
-    if input_type == "combined_stl":
-        return resolve(plate_spec["combined_stl"], repo_root)
-
-    raise RuntimeError(f"Unsupported input_type: {input_type}")
-
-
-def prusaslicer_command(target, input_file, output_file, repo_root):
-    exe = target.get("executable", "prusa-slicer")
-    profile = resolve(target["profile"], repo_root)
-
-    cmd = [
-        exe,
-        "--load",
-        str(profile),
-        "--export-gcode",
-        "--output",
-        str(output_file),
-    ]
-
-    options = target.get("options", {})
-
-    if options.get("dont_arrange", True):
-        cmd.append("--dont-arrange")
-
-    cmd.append(str(input_file))
-
-    return cmd
+    return resolve(template.format(plate=plate_name), repo_root)
 
 
-def orcaslicer_command(target, input_file, output_file, repo_root):
-    """
-    OrcaSlicer CLI is version/platform dependent.
-    This is intentionally similar to PrusaSlicer, but verify with:
+def build_plate(data, plate_name, slicer_name, printer_name, material_name, repo_root):
+    if slicer_name not in BACKENDS:
+        raise RuntimeError(f"Unsupported slicer backend: {slicer_name}")
 
-        orcaslicer --help
-    """
-    exe = target.get("executable", "orcaslicer")
-    profile = resolve(target["profile"], repo_root)
-
-    cmd = [
-        exe,
-        "--load",
-        str(profile),
-        "--export-gcode",
-        "--output",
-        str(output_file),
-    ]
-
-    options = target.get("options", {})
-
-    if options.get("dont_arrange", True):
-        cmd.append("--dont-arrange")
-
-    cmd.append(str(input_file))
-
-    return cmd
-
-
-def superslicer_command(target, input_file, output_file, repo_root):
-    exe = target.get("executable", "superslicer")
-    profile = resolve(target["profile"], repo_root)
-
-    cmd = [
-        exe,
-        "--load",
-        str(profile),
-        "--export-gcode",
-        "--output",
-        str(output_file),
-    ]
-
-    options = target.get("options", {})
-
-    if options.get("dont_arrange", True):
-        cmd.append("--dont-arrange")
-
-    cmd.append(str(input_file))
-
-    return cmd
-
-
-def cura_command(target, input_file, output_file, repo_root):
-    """
-    Example CuraEngine backend.
-
-    This expects target["profile"] to point to a simplified JSON file like:
-
-    {
-      "definition": "mechanical/prints/profiles/cura/ender3.def.json",
-      "settings": {
-        "layer_height": "0.2",
-        "infill_sparse_density": "20"
-      }
-    }
-    """
-    exe = target.get("executable", "CuraEngine")
-    profile_path = resolve(target["profile"], repo_root)
-    profile = load_json(profile_path)
-
-    definition = resolve(profile["definition"], repo_root)
-    settings = profile.get("settings", {})
-
-    cmd = [
-        exe,
-        "slice",
-        "-v",
-        "-j",
-        str(definition),
-        "-o",
-        str(output_file),
-    ]
-
-    for key, value in settings.items():
-        cmd += ["-s", f"{key}={value}"]
-
-    cmd += ["-l", str(input_file)]
-
-    return cmd
-
-
-BACKENDS = {
-    "prusaslicer": prusaslicer_command,
-    "orcaslicer": orcaslicer_command,
-    "superslicer": superslicer_command,
-    "cura": cura_command,
-}
-
-
-def build_plate(data, target_name, plate_name, repo_root):
-    targets = data["targets"]
-    plates = data["plates"]
-
-    if target_name not in targets:
-        raise RuntimeError(f"Unknown target: {target_name}")
-
-    if plate_name not in plates:
-        raise RuntimeError(f"Unknown plate: {plate_name}")
-
-    target = targets[target_name]
-    plate = plates[plate_name]
-
-    slicer = target["slicer"]
-
-    if slicer not in BACKENDS:
-        raise RuntimeError(f"Unsupported slicer backend: {slicer}")
-
-    input_type = target.get("input_type", "3mf")
-    input_file = get_plate_input(plate, input_type, repo_root)
+    input_type = data["slicers"][slicer_name].get("input_type", "3mf")
+    input_file = get_plate_input(data, plate_name, input_type, repo_root)
 
     if not input_file.exists():
         raise RuntimeError(f"Input plate does not exist: {input_file}")
 
-    output_dir = resolve(target["output_dir"], repo_root)
+    output_dir = resolve(
+        Path(data["paths"]["output_dir"]) / slicer_name / printer_name / material_name,
+        repo_root,
+    )
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    output_file = output_dir / f"{plate_name}.gcode"
+    output_file = output_dir / f"{plate_name}-{printer_name}-{material_name}"
 
-    cmd = BACKENDS[slicer](
-        target=target,
+    print(output_file)
+
+    cmd = BACKENDS[slicer_name](
+        printer=data["slicers"][slicer_name]["printers"][printer_name],
+        material_name=material_name,
         input_file=input_file,
         output_file=output_file,
-        repo_root=repo_root,
     )
-
     print("")
     print(f"Slicing plate: {plate_name}")
-    print(f"Target:        {target_name}")
-    print(f"Slicer:        {slicer}")
+    print(f"Slicer:        {slicer_name}")
+    print(f"Target:        {printer_name}:{material_name}")
     print(f"Input:         {input_file}")
     print(f"Output:        {output_file}")
+    print(cmd)
 
     run(cmd)
 
 
-def main():
-    parser = argparse.ArgumentParser()
+# "Main"
+parser = argparse.ArgumentParser()
 
-    parser.add_argument(
-        "--targets",
-        default="mechanical/prints/targets.json",
-        help="Path to targets.json",
-    )
+group_plates = parser.add_mutually_exclusive_group(required=True)
 
-    parser.add_argument(
-        "--target",
-        required=True,
-        help="Target name from targets.json, e.g. prusaslicer-coreone-pccf",
-    )
+group_plates.add_argument("--plate", help="Single plate name, e.g. frame")
 
-    group = parser.add_mutually_exclusive_group(required=True)
+group_plates.add_argument("--all-plates", action="store_true", help="Slice all plates")
 
-    group.add_argument("--plate", help="Single plate name, e.g. frame")
+group_slicers = parser.add_mutually_exclusive_group(required=True)
 
-    group.add_argument("--all-plates", action="store_true", help="Slice all plates")
+group_slicers.add_argument(
+    "--slicer", help="Select one supported slicer, e.g. prusaslicer"
+)
 
-    parser.add_argument(
-        "--repo-root", default=".", help="Repo root. Default: current directory."
-    )
+group_slicers.add_argument("--all-slicers", action="store_true", help="Use all slicers")
 
-    args = parser.parse_args()
+group_printers = parser.add_mutually_exclusive_group(required=True)
 
-    repo_root = Path(args.repo_root).resolve()
-    targets_path = resolve(args.targets, repo_root)
+group_printers.add_argument(
+    "--printer", help="Select a supported printer, e.g. coreone"
+)
 
-    data = load_json(targets_path)
+group_printers.add_argument(
+    "--all-printers", action="store_true", help="Use all printers"
+)
 
-    if args.all_plates:
-        plate_names = list(data["plates"].keys())
+parser.add_argument(
+    "--repo-root", default=".", help="Repo root. Default: current directory."
+)
+
+args = parser.parse_args()
+
+repo_root = Path(args.repo_root).resolve()
+targets_path = resolve("mechanical/prints/targets.json", repo_root)
+
+print(targets_path)
+
+data = load_json(targets_path)
+
+# Iterate through all wanted plated
+if args.all_plates:
+    plate_names = data["plates"]
+else:
+    plate_names = [args.plate]
+
+for plate_name in plate_names:
+
+    # Iterate through all wanted slicers
+    if args.all_slicers:
+        slicer_names = list(data["slicers"].keys())
     else:
-        plate_names = [args.plate]
+        slicer_names = [args.slicer]
 
-    for plate_name in plate_names:
-        build_plate(
-            data=data,
-            target_name=args.target,
-            plate_name=plate_name,
-            repo_root=repo_root,
-        )
+    for slicer_name in slicer_names:
 
+        # Iterate through all wanted printers
+        if args.all_printers:
+            printer_names = list(data["slicers"][slicer_name]["printers"].keys())
+        else:
+            printer_names = [args.printer]
 
-if __name__ == "__main__":
-    try:
-        main()
-    except Exception as exc:
-        print("")
-        print("build_prints.py failed:")
-        print(exc)
-        sys.exit(1)
+        for printer_name in printer_names:
+
+            # Iterate through all defined materials
+            material_names = list(
+                data["slicers"][slicer_name]["printers"][printer_name][
+                    "materials"
+                ].keys()
+            )
+
+            for material_name in material_names:
+
+                # Apply only if material is selected
+                material = data["slicers"][slicer_name]["printers"][printer_name][
+                    "materials"
+                ][material_name]
+
+                if plate_name in material.get("plates", []):
+
+                    print(
+                        plate_name
+                        + ":"
+                        + slicer_name
+                        + ":"
+                        + printer_name
+                        + ":"
+                        + material_name
+                    )
+
+                    build_plate(
+                        data=data,
+                        plate_name=plate_name,
+                        slicer_name=slicer_name,
+                        printer_name=printer_name,
+                        material_name=material_name,
+                        repo_root=repo_root,
+                    )

@@ -1,49 +1,62 @@
 {
   "name": "targets",
   "version": "1.0.0",
-  "license": "CC0-1.0",
+  "SPDX-License-Identifier": "CC0-1.0",
+  "SPDX-FileCopyrightText": "2026 Christoph Böhm",
 
-  "plates":
+  "paths":
   {
-    "frame":
-    {
-      "3mf": "mechanical/exports/print/plates/frame.generic.3mf",
-      "combined_stl": "mechanical/exports/print/plates/positioned_stls/frame.combined.stl"
-    },
-
-    "color-coding":
-    {
-      "3mf": "mechanical/exports/print/plates/color-coding.generic.3mf",
-      "combined_stl": "mechanical/exports/print/plates/positioned_stls/color-coding.combined.stl"
-    },
-
-    "clearance-gauge":
-    {
-      "3mf": "mechanical/exports/print/plates/clearance-gauge.generic.3mf",
-      "combined_stl": "mechanical/exports/print/plates/positioned_stls/clearance-gauge.combined.stl"
-    }
+    "output_dir": "mechanical/exports/print/gcodes",
+    "plate_3mf_template": "mechanical/exports/print/plates/{plate}.generic.3mf",
+    "combined_stl_template": "mechanical/exports/print/plates/positioned_stls/{plate}.combined.stl"
   },
 
-  "targets":
+  "plates":
+  [
+    "frame",
+    "color-coding",
+    "clearance-gauge"
+  ],
+
+  "slicers":
   {
-    "prusaslicer-coreone-pccf":
+    "prusaslicer":
     {
-      "slicer": "prusaslicer",
-      "executable": "prusa-slicer",
-
-      "printer": "coreone",
-      "material": "pccf",
-
-      "profile": "mechanical/prints/profiles/prusaslicer/coreone-0.4-pccf-0.20.ini",
-
       "input_type": "3mf",
 
-      "output_dir": "mechanical/exports/print/gcode/coreone",
-
-      "options":
+      "printers":
       {
-        "dont_arrange": true,
-        "export_project": false
+        "coreone":
+        {
+          "printer_profile": "Prusa CORE One HF0.4 nozzle",
+          "print_profile": "-=COMET=- 0.20mm STRUCTURAL @COREONE HF0.4",
+          "center": [125, 115],
+
+          "materials":
+          {
+            "prusament_pccf":
+            {
+              "material_profile": "-=COMET=- Prusament PC Blend Carbon Fiber @COREONE HF0.4",
+
+              "plates":
+              [
+                "clearance-gauge",
+                "frame"
+              ]
+            },
+
+            "prusament_petg":
+            {
+              "material_profile": "Prusament PETG @COREONE HF0.4",
+
+              "plates":
+              [
+                "clearance-gauge",
+                "color-coding"
+              ]
+            }
+          }
+        }
       }
     }
   }
